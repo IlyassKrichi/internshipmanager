@@ -26,7 +26,11 @@ public class Etudiant {
 
     private LocalDate dateNaissance;
 
-    private String genre;
+    private enum genre {
+        MASCULIN, FEMININ
+    };
+
+    private genre genre;
 
     private String tel;
 
