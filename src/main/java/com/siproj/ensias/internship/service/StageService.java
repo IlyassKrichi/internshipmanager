@@ -13,4 +13,6 @@ public interface StageService {
 
     void deleteStage(Long id);
 
+    Stage updateStage(Long id, Stage newstage);
+
 }

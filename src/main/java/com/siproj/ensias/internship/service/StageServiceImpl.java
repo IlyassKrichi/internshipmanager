@@ -38,4 +38,15 @@ public class StageServiceImpl implements StageService {
         stageRepository.deleteById(id);
     }
 
+    @Override
+    public Stage updateStage(Long id, Stage newstage) {
+        Stage oldstage = stageRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Stage with id " + id + " not found"));
+        oldstage.setDateDebut(newstage.getDateDebut());
+        oldstage.setDateFin(newstage.getDateFin());
+        return stageRepository.save(oldstage);
+
+    }
+
 }
