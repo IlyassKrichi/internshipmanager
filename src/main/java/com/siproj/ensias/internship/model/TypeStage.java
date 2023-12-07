@@ -16,7 +16,7 @@ public class TypeStage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String nom;
 }

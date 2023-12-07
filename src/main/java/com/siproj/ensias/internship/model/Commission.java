@@ -18,7 +18,7 @@ public class Commission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private LocalDate dateRevue;
 

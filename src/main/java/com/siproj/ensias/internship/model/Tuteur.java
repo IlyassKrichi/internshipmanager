@@ -16,7 +16,7 @@ public class Tuteur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String identifiant;
 
