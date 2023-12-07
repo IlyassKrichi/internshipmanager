@@ -20,8 +20,6 @@ public class Stage {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String dureeStage;
-
     private LocalDate dateDebut;
 
     private LocalDate dateFin;
