@@ -24,6 +24,6 @@ public class Promotion {
 
     private int totalEtudiants;
 
-    private List<Etudiant> etudiantsReussis;
+    private List<String> etudiantsReussis;
 
 }
