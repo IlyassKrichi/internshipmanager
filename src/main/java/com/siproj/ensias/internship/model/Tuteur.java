@@ -1,9 +1,15 @@
 package com.siproj.ensias.internship.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +20,24 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Tuteur {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    private String identifiant;
+  @JsonBackReference
+  @OneToMany(mappedBy = "tuteur")
+  private List<Stage> stages;
 
-    private String tel;
+  @JsonBackReference
+  @ManyToMany
+  @JoinTable(
+    name = "contacte",
+    joinColumns = @JoinColumn(name = "tuteur_id"),
+    inverseJoinColumns = @JoinColumn(name = "professeur_id")
+  )
+  private List<Professeur> professeurs;
 
+  private String identifiant;
+
+  private String tel;
 }

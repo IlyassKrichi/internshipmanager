@@ -1,11 +1,20 @@
 package com.siproj.ensias.internship.model;
 
-import java.time.LocalDate;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import java.time.LocalDate;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,24 +25,43 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Etudiant {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    private String identifiant;
+  @JsonBackReference
+  @ManyToMany
+  @JoinTable(
+    name = "effectue",
+    joinColumns = @JoinColumn(name = "etudiant_id"),
+    inverseJoinColumns = @JoinColumn(name = "stage_id")
+  )
+  private List<Stage> stages;
 
-    private String adresse;
+  @JsonBackReference
+  @OneToMany(mappedBy = "etudiant")
+  private List<Candidature> candidatures;
 
-    private LocalDate dateNaissance;
+  @JsonManagedReference
+  @ManyToOne
+  @JoinColumn(name = "promotion_id", referencedColumnName = "id")
+  private Promotion promotion;
 
-    private enum genre {
-        MASCULIN, FEMININ
-    };
+  private String identifiant;
 
-    private genre genre;
+  private String adresse;
 
-    private String tel;
+  private LocalDate dateNaissance;
 
-    private float scoreExam;
+  private enum genre {
+    MASCULIN,
+    FEMININ,
+  }
 
+  @Enumerated(EnumType.STRING)
+  private genre genre;
+
+  private String tel;
+
+  private float scoreExam;
 }

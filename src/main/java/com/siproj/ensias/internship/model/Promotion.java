@@ -1,11 +1,13 @@
 package com.siproj.ensias.internship.model;
 
-import java.util.List;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,14 +18,21 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Promotion {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    private int annee;
+  @JsonBackReference
+  @OneToOne
+  private Professeur professeur;
 
-    private int totalEtudiants;
+  @JsonBackReference
+  @OneToMany(mappedBy = "promotion")
+  private List<Etudiant> etudiants;
 
-    private List<String> etudiantsReussis;
+  private int annee;
 
+  private int totalEtudiants;
+
+  private int etudiantsReussis;
 }

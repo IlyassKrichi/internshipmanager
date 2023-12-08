@@ -1,9 +1,13 @@
 package com.siproj.ensias.internship.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,20 +18,23 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Entreprise {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    private String nom;
+  @JsonBackReference
+  @OneToMany(mappedBy = "entreprise", cascade = CascadeType.ALL)
+  private List<Stage> stages;
 
-    private String adresse;
+  private String nom;
 
-    private String formeJuridique;
+  private String adresse;
 
-    private String telStandard;
+  private String formeJuridique;
 
-    private String telContact;
+  private String telStandard;
 
-    private String telTuteur;
+  private String telContact;
 
+  private String telTuteur;
 }
