@@ -43,7 +43,7 @@ public class Etudiant {
   private List<Candidature> candidatures;
 
   @JsonManagedReference
-  @ManyToOne
+  @ManyToOne(optional = true)
   @JoinColumn(name = "promotion_id", referencedColumnName = "id")
   private Promotion promotion;
 

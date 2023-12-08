@@ -26,17 +26,17 @@ public class Stage {
   private Long id;
 
   @JsonManagedReference
-  @ManyToOne
+  @ManyToOne(optional = true)
   @JoinColumn(name = "entreprise_id", referencedColumnName = "id")
   private Entreprise entreprise;
 
   @JsonManagedReference
-  @ManyToOne
+  @ManyToOne(optional = true)
   @JoinColumn(name = "typeStage_id", referencedColumnName = "id")
   private TypeStage typeStage;
 
   @JsonManagedReference
-  @ManyToOne
+  @ManyToOne(optional = true)
   @JoinColumn(name = "tuteur_id", referencedColumnName = "id")
   private Tuteur tuteur;
 

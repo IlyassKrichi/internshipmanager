@@ -1,0 +1,10 @@
+Zero or Many Stages To One Entreprise
+One TypeStage To Zero or Many Stages
+Many Competences To Many TypeStages
+Many Stages To Many Etudiants
+One Tuteur To Zero or Many Stages
+Many Tuteurs To Many Professeurs
+Many Candidatures To One Etudiant
+Zero or Many Etudiant To One Promotion
+One Professeur To Zero or One Promotion
+Many Candidatures To Many Commissions
