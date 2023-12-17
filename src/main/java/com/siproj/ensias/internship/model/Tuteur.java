@@ -37,7 +37,9 @@ public class Tuteur {
   )
   private List<Professeur> professeurs;
 
-  private String identifiant;
+  private String nom;
+
+  private String prenom;
 
   private String tel;
 }

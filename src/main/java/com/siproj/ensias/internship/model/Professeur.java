@@ -38,13 +38,17 @@ public class Professeur {
   @OneToOne(mappedBy = "professeur", optional = true)
   private Promotion promotion;
 
-  private String identifiant;
+  private String nom;
+
+  private String prenom;
 
   private String adresse;
 
   private LocalDate dateEmbauche;
 
   private String tel;
+
+  private String email;
 
   private LocalDate dateDepart;
 }

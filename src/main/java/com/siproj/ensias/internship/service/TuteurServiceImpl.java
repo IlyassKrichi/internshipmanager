@@ -44,7 +44,8 @@ public class TuteurServiceImpl implements TuteurService {
       .orElseThrow(() ->
         new NotFoundException("Tuteur with id " + id + " not found")
       );
-    oldtuteur.setIdentifiant(newtuteur.getIdentifiant());
+    oldtuteur.setNom(newtuteur.getNom());
+    oldtuteur.setPrenom(newtuteur.getPrenom());
     oldtuteur.setTel(newtuteur.getTel());
     return tuteurRepository.save(oldtuteur);
   }

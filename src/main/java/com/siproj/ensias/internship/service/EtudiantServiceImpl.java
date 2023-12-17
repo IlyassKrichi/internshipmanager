@@ -47,9 +47,11 @@ public class EtudiantServiceImpl implements EtudiantService {
     oldetudiant.setAdresse(newetudiant.getAdresse());
     oldetudiant.setDateNaissance(newetudiant.getDateNaissance());
     oldetudiant.setGenre(newetudiant.getGenre());
-    oldetudiant.setIdentifiant(newetudiant.getIdentifiant());
+    oldetudiant.setNom(newetudiant.getNom());
+    oldetudiant.setPrenom(newetudiant.getPrenom());
     oldetudiant.setScoreExam(newetudiant.getScoreExam());
     oldetudiant.setTel(newetudiant.getTel());
+    oldetudiant.setEmail(newetudiant.getEmail());
     return etudiantRepository.save(oldetudiant);
   }
 }

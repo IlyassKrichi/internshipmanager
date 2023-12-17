@@ -47,8 +47,10 @@ public class ProfesseurServiceImpl implements ProfesseurService {
     oldprofesseur.setAdresse(newprofesseur.getAdresse());
     oldprofesseur.setDateDepart(newprofesseur.getDateDepart());
     oldprofesseur.setDateEmbauche(newprofesseur.getDateEmbauche());
-    oldprofesseur.setIdentifiant(newprofesseur.getIdentifiant());
+    oldprofesseur.setNom(newprofesseur.getNom());
+    oldprofesseur.setPrenom(newprofesseur.getPrenom());
     oldprofesseur.setTel(newprofesseur.getTel());
+    oldprofesseur.setEmail(newprofesseur.getEmail());
     return professeurRepository.save(oldprofesseur);
   }
 }

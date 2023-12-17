@@ -47,7 +47,9 @@ public class Etudiant {
   @JoinColumn(name = "promotion_id", referencedColumnName = "id")
   private Promotion promotion;
 
-  private String identifiant;
+  private String nom;
+
+  private String prenom;
 
   private String adresse;
 
@@ -62,6 +64,8 @@ public class Etudiant {
   private genre genre;
 
   private String tel;
+
+  private String email;
 
   private float scoreExam;
 }
