@@ -60,7 +60,7 @@
   object-fit: cover;
   z-index: 0;
   filter: brightness(50%);
-  transition: transform 0.3s, filter 0.3s, width 0.3s, z-index 0s linear 0.3s;
+  transition: transform 0.5s, filter 0.5s, width 0.5s, z-index 0s linear 0.5s;
 }
 
 .students.hovered {
@@ -81,7 +81,7 @@
   object-position: 70% 0%;
   z-index: 0;
   filter: brightness(50%);
-  transition: transform 0.3s, filter 0.3s, width 0.3s;
+  transition: transform 0.5s, filter 0.5s, width 0.5s;
 }
 
 .professors.hovered {
