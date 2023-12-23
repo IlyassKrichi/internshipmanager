@@ -162,7 +162,7 @@
   opacity: 1;
   visibility: hidden;
   transition: opacity 0.5s;
-  animation: 2s forwards btn1;
+  animation: btn1 3s forwards;
 }
 
 .btn1:hover {
@@ -202,7 +202,7 @@
   opacity: 1;
   visibility: hidden;
   transition: opacity 0.5s;
-  animation: 2s forwards btn2;
+  animation: btn2 3s forwards;
 }
 
 .btn2:hover {
