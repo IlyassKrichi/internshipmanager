@@ -2,34 +2,75 @@
 <div class="main">
   <div class="container">
     <div class="login-block">
-      <div class="images">
+      <div class="images" [class.clicked]="studentsClick || professorsClick">
         <img
           class="students"
           [class.hovered]="studentsHover"
+          [class.clicked]="studentsClick"
+          [class.faded]="professorsClick"
           src="../../assets/Studs.jpeg"
           alt="Students"
         />
         <img
           class="professors"
           [class.hovered]="professorsHover"
+          [class.clicked]="professorsClick"
+          [class.faded]="studentsClick"
           src="../../assets/Profs.jpeg"
           alt="Professors"
         />
       </div>
-      <div class="choice">Vous êtes?</div>
+      <div class="choice" [class.faded]="studentsClick || professorsClick">
+        Vous êtes?
+      </div>
       <div
         class="btn1"
+        [class.faded]="studentsClick || professorsClick"
         (mouseenter)="toggleHover('professors')"
         (mouseleave)="toggleHover('professors')"
+        (click)="toggleClick('professors')"
       >
         Professeur
       </div>
       <div
         class="btn2"
+        [class.faded]="studentsClick || professorsClick"
         (mouseenter)="toggleHover('students')"
         (mouseleave)="toggleHover('students')"
+        (click)="toggleClick('students')"
       >
         Étudiant
+      </div>
+      <button
+        class="login-btn"
+        [class.shown]="studentsClick || professorsClick"
+      >
+        <img class="outlook" src="../../assets/Outlook Logo.svg" />
+        Se Connecter par Outlook
+      </button>
+      <button
+        class="back-btn"
+        [class.shown]="studentsClick"
+        (click)="toggleBack('students')"
+      >
+        Retourner
+      </button>
+      <button
+        class="back-btn"
+        [class.shown]="professorsClick"
+        (click)="toggleBack('professors')"
+      >
+        Retourner
+      </button>
+      <div class="msg-etu" [class.shown]="studentsClick">
+        Bienvenue sur la plateforme de gestion de stage de notre école!<br /><br />Cette
+        plateforme a été conçue pour vous, les étudiants, afin de faciliter le
+        parcours de stage. Bonne chance! 😊
+      </div>
+      <div class="msg-prof" [class.shown]="professorsClick">
+        Bienvenue sur la plateforme de gestion de stage de notre école!<br /><br />Cette
+        plateforme a été conçue pour vous, les professeurs, afin de faciliter le
+        parcours de stage. 😊
       </div>
     </div>
   </div>

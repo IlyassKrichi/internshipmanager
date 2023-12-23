@@ -40,6 +40,15 @@
   word-wrap: break-word;
   text-align: center;
   line-height: 8vh;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.choice.faded {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
 }
 
 .images {
@@ -49,6 +58,11 @@
   left: 0px;
   top: 0px;
   overflow: hidden;
+  transition: width 0.5s;
+}
+
+.images.clicked {
+  width: 30vw;
 }
 
 .students {
@@ -59,8 +73,11 @@
   position: absolute;
   object-fit: cover;
   z-index: 0;
+  opacity: 1;
+  visibility: visible;
   filter: brightness(50%);
-  transition: transform 0.5s, filter 0.5s, width 0.5s, z-index 0s linear 0.5s;
+  transition: transform 0.5s, filter 0.5s, width 0.5s, z-index 0s linear 0.5s,
+    left 0.5s, visibility 1s;
 }
 
 .students.hovered {
@@ -68,6 +85,21 @@
   transform: scale(1.3);
   z-index: 1;
   filter: brightness(100%);
+  transition-delay: 0s;
+}
+
+.students.clicked {
+  width: 30vw;
+  z-index: 1;
+  transform: scale(1);
+  filter: brightness(100%);
+  transition-delay: 0s;
+}
+
+.students.faded {
+  left: -25vw;
+  z-index: 0;
+  visibility: hidden;
   transition-delay: 0s;
 }
 
@@ -80,8 +112,10 @@
   object-fit: cover;
   object-position: 70% 0%;
   z-index: 0;
+  opacity: 1;
+  visibility: visible;
   filter: brightness(50%);
-  transition: transform 0.5s, filter 0.5s, width 0.5s;
+  transition: transform 0.5s, filter 0.5s, width 0.5s, right 0.5s, visibility 1s;
 }
 
 .professors.hovered {
@@ -89,6 +123,27 @@
   transform: scale(1.3);
   z-index: 1;
   filter: brightness(100%);
+}
+
+.professors.clicked {
+  width: 30vw;
+  z-index: 1;
+  transform: scale(1);
+  filter: brightness(100%);
+  transition-delay: 0s;
+}
+
+.professors.faded {
+  right: 50vw;
+  z-index: 0;
+  visibility: hidden;
+  transition-delay: 0s;
+}
+
+@keyframes btn1 {
+  to {
+    visibility: visible;
+  }
 }
 
 .btn1 {
@@ -104,6 +159,10 @@
   border-top: 1px solid #d2d2d2;
   text-align: center;
   line-height: 17.5vh;
+  opacity: 1;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  animation: 2s forwards btn1;
 }
 
 .btn1:hover {
@@ -114,6 +173,17 @@
 .btn1:active {
   background: #959595;
   border-top: 1px solid #959595;
+}
+
+.btn1.faded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes btn2 {
+  to {
+    visibility: visible;
+  }
 }
 
 .btn2 {
@@ -129,6 +199,10 @@
   border-top: 1px solid #d2d2d2;
   text-align: center;
   line-height: 17.5vh;
+  opacity: 1;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  animation: 2s forwards btn2;
 }
 
 .btn2:hover {
@@ -141,10 +215,111 @@
   border-top: 1px solid #959595;
 }
 
-.colored {
-  color: #1446d0;
+.btn2.faded {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.btn1.hovered {
-  background: #ff0000;
+.outlook {
+  transform: scale(0.8);
+  padding-right: 0.3vw;
+}
+
+.login-btn {
+  width: 20vw;
+  height: 7vh;
+  left: 44vw;
+  bottom: 15vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: var(--font-default);
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 15px;
+  border: 2px solid rgba(210, 210, 210, 0.75);
+  background: #ffffff;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background: #d2d2d2;
+}
+
+.login-btn:active {
+  background: #959595;
+  border: 2px solid #959595;
+}
+
+.login-btn.shown {
+  opacity: 1;
+  visibility: visible;
+  left: 40vw;
+  transition-delay: 0s;
+}
+
+.back-btn {
+  width: 10vw;
+  height: 6vh;
+  left: 49vw;
+  bottom: 7vh;
+  position: absolute;
+  font-family: var(--font-default);
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 0px;
+  background: #3b6fda;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  background: #2355d4;
+}
+
+.back-btn:active {
+  background: #1446d0;
+}
+
+.back-btn.shown {
+  opacity: 1;
+  visibility: visible;
+  left: 45vw;
+  transition-delay: 0s;
+}
+
+.msg-etu,
+.msg-prof {
+  width: 34vw;
+  height: 25vh;
+  left: 36vw;
+  top: 5vh;
+  position: absolute;
+  color: black;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 5vh;
+  word-wrap: break-word;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+}
+
+.msg-etu.shown,
+.msg-prof.shown {
+  opacity: 1;
+  visibility: visible;
+  left: 32vw;
+  transition-delay: 0s;
 }

@@ -10,14 +10,40 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   studentsHover: boolean = false;
   professorsHover: boolean = false;
+  studentsClick: boolean = false;
+  professorsClick: boolean = false;
+  flag: boolean = true;
 
   toggleHover(group: 'students' | 'professors'): void {
-    if (group === 'students') {
-      this.studentsHover = !this.studentsHover;
-      console.log('Students Hover:', this.studentsHover);
-    } else if (group === 'professors') {
-      this.professorsHover = !this.professorsHover;
-      console.log('Professors Hover:', this.professorsHover);
+    if (this.flag) {
+      if (group === 'students') {
+        this.studentsHover = !this.studentsHover;
+      } else if (group === 'professors') {
+        this.professorsHover = !this.professorsHover;
+      }
     }
+  }
+
+  toggleClick(group: 'students' | 'professors'): void {
+    if (group === 'students') {
+      this.studentsClick = !this.studentsClick;
+      history.replaceState(null, '', '/login/étudiants');
+    } else if (group === 'professors') {
+      this.professorsClick = !this.professorsClick;
+      history.replaceState(null, '', '/login/professeurs');
+    }
+    this.flag = !this.flag;
+  }
+
+  toggleBack(group: 'students' | 'professors'): void {
+    if (group === 'students') {
+      this.studentsClick = !this.studentsClick;
+      this.studentsHover = false;
+    } else if (group === 'professors') {
+      this.professorsClick = !this.professorsClick;
+      this.professorsHover = false;
+    }
+    this.flag = !this.flag;
+    history.replaceState(null, '', '/login');
   }
 }

@@ -25,6 +25,9 @@
       }
     ],
     "meta-charset-utf-8": "off",
-    "meta-viewport": "off"
+    "meta-viewport": "off",
+    "button-type": "off",
+    "detect-css-reflows/composite": "off",
+    "detect-css-reflows/layout": "off"
   }
 }
