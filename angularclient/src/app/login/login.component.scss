@@ -58,7 +58,7 @@
   left: 0px;
   top: 0px;
   overflow: hidden;
-  transition: width 0.5s;
+  transition: width 0.25s;
 }
 
 .images.clicked {
@@ -77,7 +77,7 @@
   visibility: visible;
   filter: brightness(50%);
   transition: transform 0.5s, filter 0.5s, width 0.5s, z-index 0s linear 0.5s,
-    left 0.5s, visibility 1s;
+    left 0.25s, visibility 1s;
 }
 
 .students.hovered {
@@ -228,7 +228,7 @@
 .login-btn {
   width: 20vw;
   height: 7vh;
-  left: 44vw;
+  left: 48vw;
   bottom: 15vh;
   position: absolute;
   display: flex;
@@ -244,7 +244,7 @@
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+  transition: opacity 0.1s, visibility 0.5s, left 0.5s;
 }
 
 .login-btn:hover {
@@ -260,15 +260,15 @@
 .login-btn.shown {
   opacity: 1;
   visibility: visible;
-  left: 40vw;
+  left: 42vw;
   transition-delay: 0s;
 }
 
 .back-btn {
-  width: 10vw;
-  height: 6vh;
-  left: 49vw;
-  bottom: 7vh;
+  width: 3vw;
+  height: 7vh;
+  left: 44vw;
+  bottom: 15vh;
   position: absolute;
   font-family: var(--font-default);
   color: white;
@@ -280,7 +280,7 @@
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+  transition: opacity 0.1s, visibility 0.5s, left 0.5s;
 }
 
 .back-btn:hover {
@@ -295,7 +295,7 @@
 .back-btn.shown {
   opacity: 1;
   visibility: visible;
-  left: 45vw;
+  left: 38vw;
   transition-delay: 0s;
 }
 
@@ -313,7 +313,7 @@
   word-wrap: break-word;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s, visibility 0.5s, left 0.5s;
+  transition: opacity 0.1s, visibility 0.5s, left 0.5s;
 }
 
 .msg-etu.shown,
