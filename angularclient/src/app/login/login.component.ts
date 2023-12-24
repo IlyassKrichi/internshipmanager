@@ -27,10 +27,10 @@ export class LoginComponent {
   toggleClick(group: 'students' | 'professors'): void {
     if (group === 'students') {
       this.studentsClick = !this.studentsClick;
-      history.replaceState(null, '', '/login/étudiants');
+      history.pushState(null, '', '/login/étudiants');
     } else if (group === 'professors') {
       this.professorsClick = !this.professorsClick;
-      history.replaceState(null, '', '/login/professeurs');
+      history.pushState(null, '', '/login/professeurs');
     }
     this.flag = !this.flag;
   }
@@ -44,6 +44,6 @@ export class LoginComponent {
       this.professorsHover = false;
     }
     this.flag = !this.flag;
-    history.replaceState(null, '', '/login');
+    history.back();
   }
 }

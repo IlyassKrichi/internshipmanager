@@ -10,6 +10,16 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'login/étudiants',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login/professeurs',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },

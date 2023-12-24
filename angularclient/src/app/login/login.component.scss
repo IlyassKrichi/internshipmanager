@@ -228,7 +228,7 @@
 .login-btn {
   width: 20vw;
   height: 7vh;
-  left: 48vw;
+  left: 47.8vw;
   bottom: 15vh;
   position: absolute;
   display: flex;
@@ -260,14 +260,14 @@
 .login-btn.shown {
   opacity: 1;
   visibility: visible;
-  left: 42vw;
+  left: 41.8vw;
   transition-delay: 0s;
 }
 
 .back-btn {
   width: 3vw;
   height: 7vh;
-  left: 44vw;
+  left: 44.2vw;
   bottom: 15vh;
   position: absolute;
   font-family: var(--font-default);
@@ -295,7 +295,7 @@
 .back-btn.shown {
   opacity: 1;
   visibility: visible;
-  left: 38vw;
+  left: 38.2vw;
   transition-delay: 0s;
 }
 
