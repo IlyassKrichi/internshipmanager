@@ -42,7 +42,7 @@
   line-height: 8vh;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.2s, visibility 0.5s;
 }
 
 .choice.faded {
@@ -161,7 +161,7 @@
   line-height: 17.5vh;
   opacity: 1;
   visibility: hidden;
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
   animation: btn1 3s forwards;
 }
 
@@ -202,7 +202,7 @@
   line-height: 17.5vh;
   opacity: 1;
   visibility: hidden;
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
   animation: btn2 3s forwards;
 }
 
