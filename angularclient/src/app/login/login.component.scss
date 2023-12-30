@@ -9,14 +9,14 @@
 }
 
 .container {
-  width: 70vw;
-  height: 70vh;
+  width: 85vw;
+  height: 85vh;
   position: relative;
 }
 
 .login-block {
-  width: 70vw;
-  height: 70vh;
+  width: 85vw;
+  height: 85vh;
   position: relative;
   left: 0px;
   top: 0px;
@@ -31,7 +31,7 @@
 .choice {
   width: 16vw;
   height: 8vh;
-  left: 52vw;
+  left: 64.5vw;
   top: 14vh;
   position: absolute;
   color: black;
@@ -52,8 +52,8 @@
 }
 
 .images {
-  width: 50vw;
-  height: 70vh;
+  width: 60vw;
+  height: 85vh;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -62,12 +62,12 @@
 }
 
 .images.clicked {
-  width: 30vw;
+  width: 35vw;
 }
 
 .students {
-  width: 25vw;
-  height: 70vh;
+  width: 30vw;
+  height: 85vh;
   left: 0px;
   top: 0px;
   position: absolute;
@@ -81,7 +81,7 @@
 }
 
 .students.hovered {
-  width: 32.5vw;
+  width: 38.5vw;
   transform: scale(1.3);
   z-index: 1;
   filter: brightness(100%);
@@ -89,7 +89,7 @@
 }
 
 .students.clicked {
-  width: 30vw;
+  width: 35vw;
   z-index: 1;
   transform: scale(1);
   filter: brightness(100%);
@@ -97,15 +97,15 @@
 }
 
 .students.faded {
-  left: -25vw;
+  left: -30vw;
   z-index: 0;
   visibility: hidden;
   transition-delay: 0s;
 }
 
 .professors {
-  width: 25vw;
-  height: 70vh;
+  width: 30vw;
+  height: 85vh;
   right: 0px;
   top: 0px;
   position: absolute;
@@ -119,14 +119,14 @@
 }
 
 .professors.hovered {
-  width: 32.5vw;
+  width: 38.5vw;
   transform: scale(1.3);
   z-index: 1;
   filter: brightness(100%);
 }
 
 .professors.clicked {
-  width: 30vw;
+  width: 35vw;
   z-index: 1;
   transform: scale(1);
   filter: brightness(100%);
@@ -134,7 +134,7 @@
 }
 
 .professors.faded {
-  right: 50vw;
+  right: 60vw;
   z-index: 0;
   visibility: hidden;
   transition-delay: 0s;
@@ -147,10 +147,10 @@
 }
 
 .btn1 {
-  width: 20vw;
+  width: 25vw;
   height: 17.5vh;
-  left: 50vw;
-  top: 35vh;
+  left: 60vw;
+  top: 50vh;
   position: absolute;
   color: black;
   font-size: 40px;
@@ -188,10 +188,10 @@
 }
 
 .btn2 {
-  width: 20vw;
+  width: 25vw;
   height: 17.5vh;
-  left: 50vw;
-  top: 52.5vh;
+  left: 60vw;
+  top: 67.5vh;
   position: absolute;
   color: black;
   font-size: 40px;
@@ -230,7 +230,7 @@
 .login-btn {
   width: 20vw;
   height: 7vh;
-  left: 47.8vw;
+  left: 55.75vw;
   bottom: 15vh;
   position: absolute;
   display: flex;
@@ -262,14 +262,14 @@
 .login-btn.shown {
   opacity: 1;
   visibility: visible;
-  left: 41.8vw;
+  left: 51.75vw;
   transition-delay: 0s;
 }
 
 .back-btn {
   width: 3vw;
   height: 7vh;
-  left: 44.2vw;
+  left: 52.25vw;
   bottom: 15vh;
   position: absolute;
   font-family: var(--font-default);
@@ -297,15 +297,15 @@
 .back-btn.shown {
   opacity: 1;
   visibility: visible;
-  left: 38.2vw;
+  left: 48.25vw;
   transition-delay: 0s;
 }
 
 .msg-etu,
 .msg-prof {
-  width: 34vw;
+  width: 46vw;
   height: 25vh;
-  left: 36vw;
+  left: 41vw;
   top: 5vh;
   position: absolute;
   color: black;
@@ -322,6 +322,6 @@
 .msg-prof.shown {
   opacity: 1;
   visibility: visible;
-  left: 32vw;
+  left: 37vw;
   transition-delay: 0s;
 }
