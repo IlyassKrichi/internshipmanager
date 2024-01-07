@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<div class="main">
+  <div class="container">
+    <div class="sidebar">
+      <div class="logo">Gestion des Stages</div>
+      <div class="sections">
+        <button (click)="navigateToDashboard()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M2.25 12L11.2045 3.04549C11.6438 2.60615 12.3562 2.60615 12.7955 3.04549L21.75 12M4.5 9.75V19.875C4.5 20.4963 5.00368 21 5.625 21H9.75V16.125C9.75 15.5037 10.2537 15 10.875 15H13.125C13.7463 15 14.25 15.5037 14.25 16.125V21H18.375C18.9963 21 19.5 20.4963 19.5 19.875V9.75M8.25 21H16.5"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Dashboard
+        </button>
+        <button (click)="navigateToProfile()" style="background-color: #d2d2d2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M18.6854 19.0971C20.5721 17.3191 21.75 14.7971 21.75 12C21.75 6.61522 17.3848 2.25 12 2.25C6.61522 2.25 2.25 6.61522 2.25 12C2.25 14.7971 3.42785 17.3191 5.31463 19.0971C7.06012 20.7419 9.41234 21.75 12 21.75C14.5877 21.75 16.9399 20.7419 18.6854 19.0971ZM6.14512 17.8123C7.51961 16.0978 9.63161 15 12 15C14.3684 15 16.4804 16.0978 17.8549 17.8123C16.3603 19.3178 14.289 20.25 12 20.25C9.711 20.25 7.63973 19.3178 6.14512 17.8123ZM15.75 9C15.75 11.0711 14.0711 12.75 12 12.75C9.92893 12.75 8.25 11.0711 8.25 9C8.25 6.92893 9.92893 5.25 12 5.25C14.0711 5.25 15.75 6.92893 15.75 9Z"
+              fill="black"
+            /></svg
+          >Profil
+        </button>
+        <button (click)="navigateToHistory()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M11.3495 3.83619C11.2848 4.04602 11.25 4.26894 11.25 4.5C11.25 4.91421 11.5858 5.25 12 5.25H16.5C16.9142 5.25 17.25 4.91421 17.25 4.5C17.25 4.26894 17.2152 4.04602 17.1505 3.83619M11.3495 3.83619C11.6328 2.91757 12.4884 2.25 13.5 2.25H15C16.0116 2.25 16.8672 2.91757 17.1505 3.83619M11.3495 3.83619C10.9739 3.85858 10.5994 3.88529 10.2261 3.91627C9.09499 4.01015 8.25 4.97324 8.25 6.10822V8.25M17.1505 3.83619C17.5261 3.85858 17.9006 3.88529 18.2739 3.91627C19.405 4.01015 20.25 4.97324 20.25 6.10822V16.5C20.25 17.7426 19.2426 18.75 18 18.75H15.75M8.25 8.25H4.875C4.25368 8.25 3.75 8.75368 3.75 9.375V20.625C3.75 21.2463 4.25368 21.75 4.875 21.75H14.625C15.2463 21.75 15.75 21.2463 15.75 20.625V18.75M8.25 8.25H14.625C15.2463 8.25 15.75 8.75368 15.75 9.375V18.75M7.5 15.75L9 17.25L12 13.5"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Historique
+        </button>
+        <button (click)="navigateToCalendar()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M6.75 3V5.25M17.25 3V5.25M3 18.75V7.5C3 6.25736 4.00736 5.25 5.25 5.25H18.75C19.9926 5.25 21 6.25736 21 7.5V18.75M3 18.75C3 19.9926 4.00736 21 5.25 21H18.75C19.9926 21 21 19.9926 21 18.75M3 18.75V11.25C3 10.0074 4.00736 9 5.25 9H18.75C19.9926 9 21 10.0074 21 11.25V18.75"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Calendrier
+        </button>
+        <button (click)="navigateToStatus()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M8.625 12C8.625 12.2071 8.45711 12.375 8.25 12.375C8.04289 12.375 7.875 12.2071 7.875 12C7.875 11.7929 8.04289 11.625 8.25 11.625C8.45711 11.625 8.625 11.7929 8.625 12ZM8.625 12H8.25M12.375 12C12.375 12.2071 12.2071 12.375 12 12.375C11.7929 12.375 11.625 12.2071 11.625 12C11.625 11.7929 11.7929 11.625 12 11.625C12.2071 11.625 12.375 11.7929 12.375 12ZM12.375 12H12M16.125 12C16.125 12.2071 15.9571 12.375 15.75 12.375C15.5429 12.375 15.375 12.2071 15.375 12C15.375 11.7929 15.5429 11.625 15.75 11.625C15.9571 11.625 16.125 11.7929 16.125 12ZM16.125 12H15.75M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Statut
+        </button>
+        <button (click)="navigateToChat()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M20.25 8.51104C21.1341 8.79549 21.75 9.6392 21.75 10.6082V14.8938C21.75 16.0304 20.9026 16.9943 19.7697 17.0867C19.4308 17.1144 19.0909 17.1386 18.75 17.1592V20.25L15.75 17.25C14.3963 17.25 13.0556 17.1948 11.7302 17.0866C11.4319 17.0623 11.1534 16.9775 10.9049 16.8451M20.25 8.51104C20.0986 8.46232 19.9393 8.43 19.7739 8.41628C18.4472 8.30616 17.1051 8.25 15.75 8.25C14.3948 8.25 13.0528 8.30616 11.7261 8.41627C10.595 8.51015 9.75 9.47323 9.75 10.6082V14.8937C9.75 15.731 10.2099 16.4746 10.9049 16.8451M20.25 8.51104V6.63731C20.25 5.01589 19.0983 3.61065 17.4903 3.40191C15.4478 3.13676 13.365 3 11.2503 3C9.13533 3 7.05233 3.13678 5.00963 3.40199C3.40173 3.61074 2.25 5.01598 2.25 6.63738V12.8626C2.25 14.484 3.40173 15.8893 5.00964 16.098C5.58661 16.1729 6.16679 16.2376 6.75 16.2918V21L10.9049 16.8451"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Chat
+        </button>
+      </div>
+      <div class="notifications">Pas de notifications.</div>
+    </div>
+    <div class="profile">
+      <div class="profile-sec">
+        <div class="pfp">KI</div>
+        <div class="info">
+          <div class="ln">Krichi</div>
+          <div class="fn">Ilyass</div>
+          <div class="desc">
+            Étudiant 2<sup>ème</sup> année Génie Logiciel à l'ENSIAS.
+          </div>
+        </div>
+        <div class="socials">
+          <button>
+            <span>+212 627-33-33-33</span>
+            <span style="transform: translateY(10%)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                style="margin-left: 15px"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M1.5 4.5C1.5 2.84315 2.84315 1.5 4.5 1.5H5.87163C6.732 1.5 7.48197 2.08556 7.69064 2.92025L8.79644 7.34343C8.97941 8.0753 8.70594 8.84555 8.10242 9.29818L6.8088 10.2684C6.67447 10.3691 6.64527 10.5167 6.683 10.6197C7.81851 13.7195 10.2805 16.1815 13.3803 17.317C13.4833 17.3547 13.6309 17.3255 13.7316 17.1912L14.7018 15.8976C15.1545 15.2941 15.9247 15.0206 16.6566 15.2036L21.0798 16.3094C21.9144 16.518 22.5 17.268 22.5 18.1284V19.5C22.5 21.1569 21.1569 22.5 19.5 22.5H17.25C8.55151 22.5 1.5 15.4485 1.5 6.75V4.5Z"
+                  fill="black"
+                />
+              </svg>
+            </span>
+          </button>
+          <button>
+            <span>example.gmail.com</span>
+            <span style="transform: translateY(10%)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                style="margin-left: 15px"
+              >
+                <path
+                  d="M1.5 8.6691V17.25C1.5 18.9069 2.84315 20.25 4.5 20.25H19.5C21.1569 20.25 22.5 18.9069 22.5 17.25V8.6691L13.5723 14.1631C12.6081 14.7564 11.3919 14.7564 10.4277 14.1631L1.5 8.6691Z"
+                  fill="black"
+                />
+                <path
+                  d="M22.5 6.90783V6.75C22.5 5.09315 21.1569 3.75 19.5 3.75H4.5C2.84315 3.75 1.5 5.09315 1.5 6.75V6.90783L11.2139 12.8856C11.696 13.1823 12.304 13.1823 12.7861 12.8856L22.5 6.90783Z"
+                  fill="black"
+                />
+              </svg>
+            </span>
+          </button>
+          <button>
+            <span>Ilyass Krichi</span>
+            <span style="transform: translateY(10%)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 41 41"
+                fill="none"
+                style="margin-left: 15px"
+              >
+                <path
+                  d="M37.3 0.499926H3.925C3.49482 0.479776 3.06488 0.544651 2.6598 0.690876C2.25473 0.837101 1.88248 1.06178 1.56433 1.35203C1.2462 1.6423 0.988425 1.99248 0.8058 2.38248C0.623175 2.7725 0.51925 3.1947 0.5 3.62493V37.075C0.5252 37.9752 0.894149 38.832 1.53107 39.4687C2.168 40.1057 3.0246 40.4748 3.925 40.5H37.3C38.1752 40.461 39.0005 40.0805 39.5987 39.4402C40.197 38.8 40.5205 37.951 40.5 37.075V3.62493C40.5072 3.20618 40.4288 2.7904 40.2695 2.40305C40.1103 2.01573 39.8735 1.665 39.5737 1.37238C39.2742 1.07978 38.918 0.851476 38.527 0.701451C38.136 0.551426 37.7185 0.482851 37.3 0.499926ZM13 33.85H7.175V16.025H13V33.85ZM10.225 13.3249C9.81852 13.3391 9.4135 13.2691 9.0354 13.1192C8.65727 12.9694 8.31422 12.7429 8.02782 12.4542C7.7414 12.1654 7.51778 11.8205 7.37103 11.4412C7.22425 11.0619 7.15753 10.6563 7.175 10.2499C7.15703 9.83918 7.2251 9.42923 7.37487 9.04635C7.52465 8.66345 7.7528 8.3161 8.04467 8.02658C8.33657 7.73703 8.68575 7.5117 9.06982 7.36505C9.45392 7.21838 9.86442 7.15363 10.275 7.17493C10.6815 7.16078 11.0865 7.2308 11.4646 7.38065C11.8427 7.5305 12.1858 7.75693 12.4722 8.0457C12.7586 8.33448 12.9822 8.67935 13.129 9.05868C13.2757 9.438 13.3425 9.84358 13.325 10.2499C13.343 10.6607 13.2749 11.0706 13.1251 11.4535C12.9753 11.8364 12.7472 12.1838 12.4553 12.4733C12.1634 12.7628 11.8143 12.9882 11.4302 13.1348C11.0461 13.2815 10.6356 13.3462 10.225 13.3249ZM33.85 33.85H28V24.1C28 21.775 27.175 20.175 25.1 20.175C24.4555 20.1805 23.8282 20.3852 23.3047 20.7612C22.781 21.1372 22.3865 21.666 22.175 22.275C22.0125 22.7315 21.9445 23.2162 21.975 23.7V33.85H16.225V16.025H21.975V18.525C22.4863 17.5858 23.247 16.8063 24.1735 16.2723C25.1 15.7385 26.156 15.4712 27.225 15.4999C31 15.4999 33.85 18 33.85 23.325V33.85Z"
+                  fill="#0077B5"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="infos">
+        <div class="field" [class.inactive]="fieldInactive">
+          <span>Nom</span>
+          <input type="text" value="Krichi" disabled />
+        </div>
+        <div class="field" [class.inactive]="fieldInactive">
+          <span>Prénom</span>
+          <input type="text" value="Ilyass" disabled />
+        </div>
+        <div class="field" [class.inactive]="fieldInactive">
+          <span>Genre</span>
+          <input type="text" value="Masculin" disabled />
+        </div>
+        <div class="field" [class.inactive]="fieldInactive">
+          <span>Date de naissance</span>
+          <input type="date" value="1999-01-01" disabled />
+        </div>
+        <div class="field">
+          <span>Email</span>
+          <input
+            class="text"
+            [class.active]="textActive"
+            type="text"
+            value="V4i9o@example.com"
+          />
+        </div>
+        <div class="field">
+          <span>Numéro de téléphone</span>
+          <input
+            class="text"
+            [class.active]="textActive"
+            type="text"
+            value="0651234567"
+          />
+        </div>
+        <div class="field" [class.inactive]="fieldInactive">
+          <span>Adresse</span>
+          <input type="text" value="Al Irfane" disabled />
+        </div>
+        <div class="field" [class.inactive]="fieldInactive">
+          <span>Niveau d'étude</span>
+          <input type="text" value="2ème année Génie Logiciel" disabled />
+        </div>
+      </div>
+      <button
+        class="cancel-btn"
+        [class.save]="btnActive"
+        (click)="toggleActive()"
+      >
+        Annuler
+      </button>
+      <button id="modify" class="modify-btn" (click)="toggleInactive()">
+        Modifier
+      </button>
+    </div>
+  </div>
+</div>

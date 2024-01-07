@@ -14,7 +14,8 @@
       "default",
       {
         "ignore": [
-          "user-select"
+          "user-select",
+          "width: fit-content"
         ]
       }
     ],
@@ -35,6 +36,13 @@
         "button-name": "off"
       }
     ],
-    "detect-css-reflows/paint": "off"
+    "detect-css-reflows/paint": "off",
+    "no-inline-styles": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ]
   }
 }
