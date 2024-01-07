@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import path from 'node:path';
-import { AppComponent } from './app.component';
 import { CalendarEtuComponent } from './calendar-etu/calendar-etu.component';
 import { ChatEtuComponent } from './chat-etu/chat-etu.component';
 import { DashboardEtuComponent } from './dashboard-etu/dashboard-etu.component';
@@ -52,9 +50,5 @@ export const routes: Routes = [
   {
     path: 'chat',
     component: ChatEtuComponent,
-  },
-  {
-    path: '**',
-    component: DashboardEtuComponent,
   },
 ];

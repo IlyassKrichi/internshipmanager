@@ -39,34 +39,58 @@
 
 .history table {
   width: 90%;
-  height: 200px;
-  border-radius: 20px;
+  height: 90%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   border-collapse: collapse;
-  text-align: center;
   font-family: var(--font-default);
   overflow: hidden;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
-.history table thead {
-  height: 60px;
+.history th {
+  padding: 20px 40px;
+}
+
+.history td {
+  padding: 30px 40px;
+}
+
+.history table thead tr {
   font-size: 20px;
   font-weight: 600;
+  text-align: left;
   background-color: #959595;
   color: white;
 }
 
+.history table thead {
+  display: block;
+}
+
 .history table td {
-  height: 70px;
   font-size: 18px;
   font-weight: 500;
 }
 
-.history table tr:nth-child(odd) {
-  background-color: #d2d2d2;
+.history tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
-.history table tr:nth-child(even) {
-  background-color: white;
+.history table tr {
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.history table tr:nth-child(odd) {
+  background-color: #e2e2e2;
+}
+
+.history table tbody {
+  overflow-y: auto;
+  height: 99.4%;
+  display: block;
 }
 
 .sections {
