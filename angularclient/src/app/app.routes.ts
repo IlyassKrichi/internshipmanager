@@ -53,4 +53,8 @@ export const routes: Routes = [
     path: 'chat',
     component: ChatEtuComponent,
   },
+  {
+    path: '**',
+    component: DashboardEtuComponent,
+  },
 ];
