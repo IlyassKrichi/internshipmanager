@@ -13,6 +13,12 @@ public class EtudiantServiceImpl implements EtudiantService {
 
   private final EtudiantRepository etudiantRepository;
 
+
+  @Override
+  public List<Etudiant> getAllEtudiants() {
+    return etudiantRepository.findAll();
+  }
+
   @Override
   public List<Etudiant> getAll() {
     return etudiantRepository.findAll();
@@ -23,8 +29,9 @@ public class EtudiantServiceImpl implements EtudiantService {
     return etudiantRepository.save(etudiant);
   }
 
+  
   @Override
-  public Etudiant getEtudiant(Long id) {
+  public Etudiant getEtudiantById(Long id) {
     return etudiantRepository
       .findById(id)
       .orElseThrow(() ->

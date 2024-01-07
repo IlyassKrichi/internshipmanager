@@ -8,9 +8,12 @@ public interface EtudiantService {
 
   Etudiant addEtudiant(Etudiant etudiant);
 
-  Etudiant getEtudiant(Long id);
 
   void deleteEtudiant(Long id);
 
   Etudiant updateEtudiant(Long id, Etudiant newetudiant);
+
+  List<Etudiant> getAllEtudiants();
+
+  Etudiant getEtudiantById(Long id);
 }

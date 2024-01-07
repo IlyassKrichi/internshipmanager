@@ -18,6 +18,9 @@ public class StageController {
 
   private final StageService stageService;
 
+
+
+
   @GetMapping("/stages")
   public List<Stage> getAll() {
     return stageService.getAll();

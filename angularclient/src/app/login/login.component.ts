@@ -1,18 +1,29 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+
+
+
+
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  imports: [],
+  standalone: true,
+  styleUrls: ['./login.component.scss'], // Corrected from styleUrl to styleUrls
 })
 export class LoginComponent {
+  // Your component logic here
   studentsHover: boolean = false;
   professorsHover: boolean = false;
   studentsClick: boolean = false;
   professorsClick: boolean = false;
   flag: boolean = true;
+
+  constructor() {
+
+  }
+
 
   toggleHover(group: 'students' | 'professors'): void {
     if (this.flag) {
