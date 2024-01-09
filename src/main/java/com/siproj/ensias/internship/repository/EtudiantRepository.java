@@ -6,4 +6,5 @@ import com.siproj.ensias.internship.model.Etudiant;
 
 public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
 
+    Etudiant findByEmail(String email);
 }

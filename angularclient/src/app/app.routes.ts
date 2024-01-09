@@ -6,6 +6,7 @@ import { HistoryEtuComponent } from './history-etu/history-etu.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileEtuComponent } from './profile-etu/profile-etu.component';
 import { StatusEtuComponent } from './status-etu/status-etu.component';
+import {LoginFormComponent} from "./login-form/login-form.component";
 
 export const routes: Routes = [
   {
@@ -28,9 +29,15 @@ export const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'form',
+    component: LoginFormComponent,
+  },
+
+  {
     path: 'dashboard',
     component: DashboardEtuComponent,
   },
+
   {
     path: 'profil',
     component: ProfileEtuComponent,
