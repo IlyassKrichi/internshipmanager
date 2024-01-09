@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
-import {AuthService} from "../auth-service.service";
-
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  standalone: true,
+  styleUrls: ['./login-form.component.scss'],
   imports: [
     ReactiveFormsModule
   ],
-  styleUrls: ['./login-form.component.scss']
+  standalone: true
 })
 export class LoginFormComponent {
 
@@ -24,29 +23,30 @@ export class LoginFormComponent {
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', Validators.required]  // Added password field
     });
   }
 
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.authenticate(email, password).subscribe(
-        (response: any) => {
+      this.authService.authenticate(email, password).subscribe({
+        next: (response: any) => {
+          console.log('Form is submitted.');
           // Handle the response from the backend
           if (response.success) {
             // Redirect to another component or route
-            this.router.navigate(['/dashboard']); // Replace with your desired route
+            this.router.navigate(['/dashboard']).then(r => true); // Replace with your desired route
           } else {
             // Handle authentication failure
             console.error('Authentication failed:', response.message);
           }
         },
-          (error: any) => {
+        error: (error: any) => {
           // Handle error from the backend
-          console.log("Something went wrong!");
+          console.error('Something went wrong!', error);
         }
-      );
+      });
     }
   }
 }

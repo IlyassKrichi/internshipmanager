@@ -17,6 +17,7 @@ import java.time.LocalDate;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -54,6 +55,15 @@ public class Etudiant {
   private String adresse;
 
   private LocalDate dateNaissance;
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+
+  private String password;
+
+
 
   private enum genre {
     MASCULIN,
