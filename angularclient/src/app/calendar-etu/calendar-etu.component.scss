@@ -14,7 +14,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 18% 81%;
-  grid-template-areas: "sidebar history";
+  grid-template-areas: "sidebar calendar";
   gap: 1%;
 }
 
@@ -26,8 +26,8 @@
   position: relative;
 }
 
-.history {
-  grid-area: history;
+.calendar {
+  grid-area: calendar;
   background: white;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
