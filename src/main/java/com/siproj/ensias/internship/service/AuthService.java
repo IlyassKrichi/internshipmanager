@@ -7,6 +7,6 @@ public interface AuthService {
 
 
 
-    boolean authenticateEtudiant(String email);
+    boolean authenticateEtudiant(String email,String password);
 
 }
