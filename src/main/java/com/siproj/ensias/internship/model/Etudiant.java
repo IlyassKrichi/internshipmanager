@@ -12,7 +12,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -37,10 +36,6 @@ public class Etudiant {
     inverseJoinColumns = @JoinColumn(name = "stage_id")
   )
   private List<Stage> stages;
-
-  @JsonBackReference
-  @OneToMany(mappedBy = "etudiant")
-  private List<Candidature> candidatures;
 
   @JsonManagedReference
   @ManyToOne(optional = true)
@@ -72,6 +67,4 @@ public class Etudiant {
   private String tel;
 
   private String email;
-
-  private float scoreExam;
 }

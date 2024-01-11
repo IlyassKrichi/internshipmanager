@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<div class="main">
+  <div class="container">
+    <div class="login-block">
+      <div class="images" [class.clicked]="studentsClick || professorsClick">
+        <img
+          class="students"
+          [class.hovered]="studentsHover"
+          [class.clicked]="studentsClick"
+          [class.faded]="professorsClick"
+          src="../../assets/Studs.jpeg"
+          alt="Students"
+        />
+        <img
+          class="professors"
+          [class.hovered]="professorsHover"
+          [class.clicked]="professorsClick"
+          [class.faded]="studentsClick"
+          src="../../assets/Profs.jpeg"
+          alt="Professors"
+        />
+      </div>
+      <div class="choice" [class.faded]="studentsClick || professorsClick">
+        Vous êtes?
+      </div>
+      <div
+        class="btn1"
+        [class.faded]="studentsClick || professorsClick"
+        (mouseenter)="toggleHover('professors')"
+        (mouseleave)="toggleHover('professors')"
+        (click)="toggleClick('professors')"
+      >
+        Professeur
+      </div>
+      <div
+        class="btn2"
+        [class.faded]="studentsClick || professorsClick"
+        (mouseenter)="toggleHover('students')"
+        (mouseleave)="toggleHover('students')"
+        (click)="toggleClick('students')"
+      >
+        Étudiant
+      </div>
+      <!-- login via microsoft entra id -->
+      <button
+        class="login-btn"
+        [class.shown]="studentsClick || professorsClick"
+      >
+        <img class="outlook" src="../../assets/Outlook Logo.svg" />
+        Se Connecter par Outlook
+      </button>
+      <button
+        class="back-btn"
+        [class.shown]="studentsClick"
+        (click)="toggleBack('students')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="-0.5 0 23 23"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+          />
+        </svg>
+      </button>
+      <button
+        class="back-btn"
+        [class.shown]="professorsClick"
+        (click)="toggleBack('professors')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="-0.5 0 23 23"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+          />
+        </svg>
+      </button>
+      <div class="msg-etu" [class.shown]="studentsClick">
+        Bienvenue sur la plateforme de gestion de stage de notre école!<br /><br />Cette
+        plateforme a été conçue pour vous, les étudiants, afin de faciliter le
+        parcours de stage. Bonne chance!
+      </div>
+      <div class="msg-prof" [class.shown]="professorsClick">
+        Bienvenue sur la plateforme de gestion de stage de notre école!<br /><br />Cette
+        plateforme a été conçue pour vous, les professeurs, afin de faciliter le
+        parcours de stage.
+      </div>
+    </div>
+  </div>
+</div>

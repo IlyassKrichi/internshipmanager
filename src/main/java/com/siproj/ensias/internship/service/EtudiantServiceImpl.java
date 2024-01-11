@@ -13,7 +13,6 @@ public class EtudiantServiceImpl implements EtudiantService {
 
   private final EtudiantRepository etudiantRepository;
 
-
   @Override
   public List<Etudiant> getAllEtudiants() {
     return etudiantRepository.findAll();
@@ -29,7 +28,6 @@ public class EtudiantServiceImpl implements EtudiantService {
     return etudiantRepository.save(etudiant);
   }
 
-  
   @Override
   public Etudiant getEtudiantById(Long id) {
     return etudiantRepository
@@ -56,7 +54,6 @@ public class EtudiantServiceImpl implements EtudiantService {
     oldetudiant.setGenre(newetudiant.getGenre());
     oldetudiant.setNom(newetudiant.getNom());
     oldetudiant.setPrenom(newetudiant.getPrenom());
-    oldetudiant.setScoreExam(newetudiant.getScoreExam());
     oldetudiant.setTel(newetudiant.getTel());
     oldetudiant.setEmail(newetudiant.getEmail());
     return etudiantRepository.save(oldetudiant);
