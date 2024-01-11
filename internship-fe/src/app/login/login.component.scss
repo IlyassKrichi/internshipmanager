@@ -222,23 +222,19 @@
   pointer-events: none;
 }
 
-.outlook {
-  transform: scale(0.8);
-  padding-right: 0.3vw;
-}
-
-.login-btn {
-  width: 20vw;
-  height: 7vh;
+.login-form {
+  width: 30vw;
+  height: 20vh;
   left: 55.75vw;
   bottom: 15vh;
   position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: black;
   font-family: var(--font-default);
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   border-radius: 15px;
   border: 2px solid rgba(210, 210, 210, 0.75);
@@ -249,17 +245,7 @@
   transition: opacity 0.1s, visibility 0.5s, left 0.5s;
 }
 
-.login-btn:hover {
-  cursor: pointer;
-  background: #d2d2d2;
-}
-
-.login-btn:active {
-  background: #959595;
-  border: 2px solid #959595;
-}
-
-.login-btn.shown {
+.login-form.shown {
   opacity: 1;
   visibility: visible;
   left: 51.75vw;

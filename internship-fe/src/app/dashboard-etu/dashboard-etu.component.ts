@@ -1,23 +1,13 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
 @Component({
   selector: 'app-dashboard-etu',
   templateUrl: './dashboard-etu.component.html',
   styleUrls: ['./dashboard-etu.component.scss'],
 })
 export class DashboardEtuComponent {
-  private apiUrl = 'http://localhost:8080/etudiants';
-  constructor(private router: Router, private http: HttpClient) {}
-
-  getUsers(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
-  }
+  constructor(private router: Router) {}
 
   navigateToDashboard(): void {
     this.router.navigate(['/dashboard']);

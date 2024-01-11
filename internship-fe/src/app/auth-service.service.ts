@@ -1,30 +1,21 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable, tap, throwError} from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  private apiUrl = 'http://localhost:8080/api/v1/auth/';
 
-  private baseUrl = 'http://localhost:8080/api/auth/login'; // Fix the typo in the URL
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-
-  authenticate(email: string, password: any): Observable<any> {
+  login(email: string, password: string): Observable<any> {
     const credentials = { email: email, password: password };
-    return this.http.post(this.baseUrl, credentials)
-      .pipe(
-        catchError(this.handleError),
-        tap(response => console.log('Authentication response:', response))
-      );
+    return this.http.post<any>(this.apiUrl + 'authenticate', credentials);
   }
 
-
-  private handleError(error: any): Observable<never> {
-    console.error('An error occurred:', error);
-    return throwError('Something went wrong, please try again later.'); // You can customize the error message
+  getTokens(): String | null {
+    return localStorage.getItem('token');
   }
 }

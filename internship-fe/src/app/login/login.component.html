@@ -41,14 +41,21 @@
       >
         Étudiant
       </div>
-      <!-- login via microsoft entra id -->
-      <button
-        class="login-btn"
-        [class.shown]="studentsClick || professorsClick"
-      >
-        <img class="outlook" src="../../assets/Outlook Logo.svg" />
-        Se Connecter par Outlook
-      </button>
+      <div class="login-form" [class.shown]="studentsClick || professorsClick">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <label>
+            Username:
+            <input type="text" formControlName="username" />
+          </label>
+
+          <label>
+            Password:
+            <input type="password" formControlName="password" />
+          </label>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
       <button
         class="back-btn"
         [class.shown]="studentsClick"
