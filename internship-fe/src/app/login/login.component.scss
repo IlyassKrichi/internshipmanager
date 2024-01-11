@@ -223,8 +223,8 @@
 }
 
 .login-form {
-  width: 30vw;
-  height: 20vh;
+  width: 18vw;
+  height: 25vh;
   left: 55.75vw;
   bottom: 15vh;
   position: absolute;
@@ -236,10 +236,6 @@
   font-family: var(--font-default);
   font-size: 20px;
   font-weight: 500;
-  border-radius: 15px;
-  border: 2px solid rgba(210, 210, 210, 0.75);
-  background: #ffffff;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.1s, visibility 0.5s, left 0.5s;
@@ -252,11 +248,92 @@
   transition-delay: 0s;
 }
 
+.login-form form {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  color: black;
+  gap: 1vh;
+}
+
+.sp1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.in1 {
+  width: 18vw;
+  height: 3vh;
+  border: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #d2d2d2;
+  font-family: var(--font-default);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.in1:focus {
+  outline: none;
+}
+
+.sp2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.in2 {
+  width: 18vw;
+  height: 3vh;
+  border: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #d2d2d2;
+  font-family: var(--font-default);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.in2:focus {
+  outline: none;
+}
+
+.login-btn {
+  width: 18vw;
+  height: 5vh;
+  margin-top: 1.5vh;
+  margin-left: 3%;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  border: 0px;
+  background: #3b6fda;
+  color: white;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background: #2355d4;
+}
+
+.login-btn:active {
+  background: #1446d0;
+  border: 0px;
+}
+
 .back-btn {
   width: 3vw;
   height: 7vh;
-  left: 52.25vw;
-  bottom: 15vh;
+  left: 50.25vw;
+  bottom: 25vh;
   position: absolute;
   font-family: var(--font-default);
   color: white;
@@ -283,7 +360,7 @@
 .back-btn.shown {
   opacity: 1;
   visibility: visible;
-  left: 48.25vw;
+  left: 46.25vw;
   transition-delay: 0s;
 }
 

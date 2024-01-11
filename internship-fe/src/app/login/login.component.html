@@ -43,17 +43,13 @@
       </div>
       <div class="login-form" [class.shown]="studentsClick || professorsClick">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <label>
-            Username:
-            <input type="text" formControlName="username" />
-          </label>
+          <span class="sp1">Email</span>
+          <input class="in1" type="text" formControlName="username" />
 
-          <label>
-            Password:
-            <input type="password" formControlName="password" />
-          </label>
+          <span class="sp2">Password</span>
+          <input class="in2" type="password" formControlName="password" />
 
-          <button type="submit">Submit</button>
+          <button class="login-btn" type="submit">Login</button>
         </form>
       </div>
       <button
