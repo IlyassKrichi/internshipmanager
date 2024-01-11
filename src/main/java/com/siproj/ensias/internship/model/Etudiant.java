@@ -58,19 +58,12 @@ public class Etudiant implements UserDetails {
 
   private String password;
 
-  private enum genre {
-    MASCULIN,
-    FEMININ,
-  }
-
   @Enumerated(EnumType.STRING)
-  private genre genre;
+  private Genre genre;
 
   private String tel;
 
   private String email;
-
-  private String anneeEtude;
 
   @Enumerated(EnumType.STRING)
   private Role role;

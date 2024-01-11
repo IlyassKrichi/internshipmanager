@@ -27,6 +27,10 @@ public class AuthenticationService {
       .email(request.getEmail())
       .password(passwordEncoder.encode(request.getPassword()))
       .role(Role.ETUDIANT)
+      .adresse(request.getAdresse())
+      .dateNaissance(request.getDateNaissance())
+      .tel(request.getTel())
+      .genre(request.getGenre())
       .build();
     etudiantRepository.save(etudiant);
     var jwtToken = jwtService.generateToken(etudiant);
