@@ -65,8 +65,8 @@ public class Etudiant implements UserDetails {
 
   private String email;
 
-  @Enumerated(EnumType.STRING)
-  private Role role;
+@Enumerated(EnumType.STRING)
+  private Role role= Role.ETUDIANT;
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

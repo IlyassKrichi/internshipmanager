@@ -14,5 +14,5 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/Internship
     username: postgres
-    password: hpostgresql02082002p
+    password: barca0000
     driver-class-name: org.postgresql.Driver

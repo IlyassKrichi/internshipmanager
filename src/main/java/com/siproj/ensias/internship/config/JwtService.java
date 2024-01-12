@@ -1,4 +1,5 @@
 package com.siproj.ensias.internship.config;
+import org.springframework.security.core.GrantedAuthority;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -33,18 +34,25 @@ public class JwtService {
   }
 
   public String generateToken(
-    Map<String, Object> extraClaims,
-    UserDetails userDetails
+          Map<String, Object> extraClaims,
+          UserDetails userDetails
   ) {
+    String role = userDetails.getAuthorities().stream()
+            .findFirst()
+            .map(GrantedAuthority::getAuthority)
+            .orElse("defaultRole");
+
     return Jwts
-      .builder()
-      .setClaims(extraClaims)
-      .setSubject(userDetails.getUsername())
-      .setIssuedAt(new Date(System.currentTimeMillis()))
-      .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
-      .signWith(getSigninKey(), SignatureAlgorithm.HS256)
-      .compact();
+            .builder()
+            .setClaims(extraClaims)
+            .claim("role", role)
+            .setSubject(userDetails.getUsername())
+            .setIssuedAt(new Date(System.currentTimeMillis()))
+            .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+            .signWith(getSigninKey(), SignatureAlgorithm.HS256)
+            .compact();
   }
+
 
   public boolean isTokenValid(String token, UserDetails userDetails) {
     final String username = extractUsername(token);

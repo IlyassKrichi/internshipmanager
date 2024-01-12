@@ -1,6 +1,8 @@
 package com.siproj.ensias.internship.config;
 
+import com.siproj.ensias.internship.model.Etudiant;
 import com.siproj.ensias.internship.repository.EtudiantRepository;
+import com.siproj.ensias.internship.repository.ProfesseurRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,20 +15,27 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.Optional;
+
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
   public final EtudiantRepository etudiantRepository;
 
+  public final ProfesseurRepository professeurRepository;
+
   @Bean
   public UserDetailsService userDetailsService() {
-    return username ->
-      etudiantRepository
-        .findByEmail(username)
-        .orElseThrow(() ->
-          new UsernameNotFoundException("Utilisateur non trouvé")
-        );
+    return username -> {
+      Optional<Etudiant> etudiant = etudiantRepository.findByEmail(username);
+      if (etudiant.isPresent()) {
+        return etudiant.get();
+      } else {
+        return professeurRepository
+                .findByEmail(username);
+      }
+    };
   }
 
   @Bean
