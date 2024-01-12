@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (response) => {
           localStorage.setItem('token', response.token);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['étudiant/dashboard']);
         },
         error: (error) => {
           console.error('Something went wrong!', error);

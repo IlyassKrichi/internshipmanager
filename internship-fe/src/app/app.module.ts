@@ -11,11 +11,15 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarEtuComponent } from './calendar-etu/calendar-etu.component';
+import { CalendarProfComponent } from './calendar-prof/calendar-prof.component';
 import { DashboardEtuComponent } from './dashboard-etu/dashboard-etu.component';
+import { DashboardProfComponent } from './dashboard-prof/dashboard-prof.component';
 import { HistoryEtuComponent } from './history-etu/history-etu.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileEtuComponent } from './profile-etu/profile-etu.component';
+import { ProfileProfComponent } from './profile-prof/profile-prof.component';
 import { StatusEtuComponent } from './status-etu/status-etu.component';
+import { StatusProfComponent } from './status-prof/status-prof.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { StatusEtuComponent } from './status-etu/status-etu.component';
     LoginComponent,
     ProfileEtuComponent,
     StatusEtuComponent,
+    DashboardProfComponent,
+    ProfileProfComponent,
+    StatusProfComponent,
+    CalendarProfComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -43,7 +51,7 @@ import { StatusEtuComponent } from './status-etu/status-etu.component';
     }),
   ],
   providers: [],
-  exports: [CalendarEtuComponent],
+  exports: [CalendarEtuComponent, CalendarProfComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

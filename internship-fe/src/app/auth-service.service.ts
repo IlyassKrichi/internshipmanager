@@ -12,6 +12,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  login(email: string, password: string): Observable<any> {
+    const credentials = { email: email, password: password };
+    return this.http.post<any>(this.apiUrl + '/auth/authenticate', credentials);
+  }
+
   getTokens(): string | null {
     return localStorage.getItem('token');
   }

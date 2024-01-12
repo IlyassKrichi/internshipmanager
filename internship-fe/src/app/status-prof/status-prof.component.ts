@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-status-etu',
-  templateUrl: './status-etu.component.html',
-  styleUrls: ['./status-etu.component.scss'],
+  templateUrl: './status-prof.component.html',
+  styleUrls: ['./status-prof.component.scss'],
 })
-export class StatusEtuComponent {
+export class StatusProfComponent {
   uploadActive: boolean = false;
   fileName: string = '';
 
@@ -31,22 +31,18 @@ export class StatusEtuComponent {
   }
 
   navigateToDashboard(): void {
-    this.router.navigate(['étudiant/dashboard']);
+    this.router.navigate(['professeur/dashboard']);
   }
 
   navigateToProfile(): void {
-    this.router.navigate(['étudiant/profil']);
-  }
-
-  navigateToHistory(): void {
-    this.router.navigate(['étudiant/historique']);
+    this.router.navigate(['professeur/profil']);
   }
 
   navigateToCalendar(): void {
-    this.router.navigate(['étudiant/calendrier']);
+    this.router.navigate(['professeur/calendrier']);
   }
 
   navigateToStatus(): void {
-    this.router.navigate(['étudiant/statut']);
+    this.router.navigate(['professeur/statut']);
   }
 }

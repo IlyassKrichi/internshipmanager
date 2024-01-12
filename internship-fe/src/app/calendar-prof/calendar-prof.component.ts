@@ -45,7 +45,7 @@ const colors: Record<string, EventColor> = {
 registerLocaleData(localeFr);
 
 @Component({
-  selector: 'app-calendar-etu',
+  selector: 'app-calendar-prof',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
@@ -59,10 +59,10 @@ registerLocaleData(localeFr);
       }
     `,
   ],
-  templateUrl: './calendar-etu.component.html',
-  styleUrls: ['./calendar-etu.component.scss'],
+  templateUrl: './calendar-prof.component.html',
+  styleUrls: ['./calendar-prof.component.scss'],
 })
-export class CalendarEtuComponent {
+export class CalendarProfComponent {
   constructor(private router: Router, private modal: NgbModal) {}
 
   @ViewChild('modalContent', { static: true })
@@ -186,26 +186,22 @@ export class CalendarEtuComponent {
   }
 
   navigateToDashboard(): void {
-    this.router.navigate(['étudiant/dashboard']);
+    this.router.navigate(['professeur/dashboard']);
   }
 
   navigateToProfile(): void {
-    this.router.navigate(['étudiant/profil']);
-  }
-
-  navigateToHistory(): void {
-    this.router.navigate(['étudiant/historique']);
+    this.router.navigate(['professeur/profil']);
   }
 
   navigateToCalendar(): void {
-    this.router.navigate(['étudiant/calendrier']);
+    this.router.navigate(['professeur/calendrier']);
   }
 
   navigateToStatus(): void {
-    this.router.navigate(['étudiant/statut']);
+    this.router.navigate(['professeur/statut']);
   }
 
   navigateToChat(): void {
-    this.router.navigate(['étudiant/chat']);
+    this.router.navigate(['professeur/chat']);
   }
 }

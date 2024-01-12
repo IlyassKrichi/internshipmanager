@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-etu',
-  templateUrl: './profile-etu.component.html',
-  styleUrls: ['./profile-etu.component.scss'],
+  templateUrl: './profile-prof.component.html',
+  styleUrls: ['./profile-prof.component.scss'],
 })
-export class ProfileEtuComponent {
+export class ProfileProfComponent {
   fieldInactive = false;
   btnActive = false;
   textActive = false;
@@ -14,23 +14,19 @@ export class ProfileEtuComponent {
   constructor(private router: Router) {}
 
   navigateToDashboard(): void {
-    this.router.navigate(['étudiant/dashboard']);
+    this.router.navigate(['professeur/dashboard']);
   }
 
   navigateToProfile(): void {
-    this.router.navigate(['étudiant/profil']);
-  }
-
-  navigateToHistory(): void {
-    this.router.navigate(['étudiant/historique']);
+    this.router.navigate(['professeur/profil']);
   }
 
   navigateToCalendar(): void {
-    this.router.navigate(['étudiant/calendrier']);
+    this.router.navigate(['professeur/calendrier']);
   }
 
   navigateToStatus(): void {
-    this.router.navigate(['étudiant/statut']);
+    this.router.navigate(['professeur/statut']);
   }
 
   toggleInactive(): void {

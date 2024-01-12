@@ -35,22 +35,22 @@ export class HistoryEtuComponent implements OnInit {
   }
 
   navigateToDashboard(): void {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['étudiant/dashboard']);
   }
 
   navigateToProfile(): void {
-    this.router.navigate(['/profil']);
+    this.router.navigate(['étudiant/profil']);
   }
 
   navigateToHistory(): void {
-    this.router.navigate(['/historique']);
+    this.router.navigate(['étudiant/historique']);
   }
 
   navigateToCalendar(): void {
-    this.router.navigate(['/calendrier']);
+    this.router.navigate(['étudiant/calendrier']);
   }
 
   navigateToStatus(): void {
-    this.router.navigate(['/statut']);
+    this.router.navigate(['étudiant/statut']);
   }
 }

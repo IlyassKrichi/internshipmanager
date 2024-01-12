@@ -6,10 +6,10 @@ import { Etudiant } from '../objects/Etudiant';
 
 @Component({
   selector: 'app-dashboard-etu',
-  templateUrl: './dashboard-etu.component.html',
-  styleUrls: ['./dashboard-etu.component.scss'],
+  templateUrl: './dashboard-prof.component.html',
+  styleUrls: ['./dashboard-prof.component.scss'],
 })
-export class DashboardEtuComponent implements OnInit {
+export class DashboardProfComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}
 
   etudiant: Etudiant | undefined;
@@ -34,22 +34,18 @@ export class DashboardEtuComponent implements OnInit {
   }
 
   navigateToDashboard(): void {
-    this.router.navigate(['étudiant/dashboard']);
+    this.router.navigate(['professeur/dashboard']);
   }
 
   navigateToProfile(): void {
-    this.router.navigate(['étudiant/profil']);
-  }
-
-  navigateToHistory(): void {
-    this.router.navigate(['étudiant/historique']);
+    this.router.navigate(['professeur/profil']);
   }
 
   navigateToCalendar(): void {
-    this.router.navigate(['étudiant/calendrier']);
+    this.router.navigate(['professeur/calendrier']);
   }
 
   navigateToStatus(): void {
-    this.router.navigate(['étudiant/statut']);
+    this.router.navigate(['professeur/statut']);
   }
 }
