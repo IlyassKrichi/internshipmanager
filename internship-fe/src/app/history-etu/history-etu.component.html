@@ -117,13 +117,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Company 1</td>
-              <td>Mentor 1</td>
-              <td>Supervisor 1</td>
-              <td>Skill 1</td>
-              <td>Duration 1</td>
-              <td>Type 1</td>
+            <tr *ngFor="let stage of etudiant?.stages">
+              <td>{{ stage.entreprise }}</td>
+              <td>{{ stage.tuteur }}</td>
+              <td>{{ etudiant?.promotion?.professeur }}</td>
+              <td>{{ stage.typeStage?.competences }}</td>
+              <td>{{ stage.dateFin }}</td>
+              <td>{{ stage.typeStage }}</td>
             </tr>
           </tbody>
         </table>

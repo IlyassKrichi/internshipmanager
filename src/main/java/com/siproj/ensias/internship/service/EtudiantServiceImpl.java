@@ -38,6 +38,15 @@ public class EtudiantServiceImpl implements EtudiantService {
   }
 
   @Override
+  public Etudiant getEtudiantByEmail(String email) {
+    return etudiantRepository
+      .findByEmail(email)
+      .orElseThrow(() ->
+        new NotFoundException("Etudiant with email " + email + " not found")
+      );
+  }
+
+  @Override
   public void deleteEtudiant(Long id) {
     etudiantRepository.deleteById(id);
   }

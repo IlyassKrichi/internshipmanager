@@ -8,7 +8,6 @@ public interface EtudiantService {
 
   Etudiant addEtudiant(Etudiant etudiant);
 
-
   void deleteEtudiant(Long id);
 
   Etudiant updateEtudiant(Long id, Etudiant newetudiant);
@@ -16,4 +15,6 @@ public interface EtudiantService {
   List<Etudiant> getAllEtudiants();
 
   Etudiant getEtudiantById(Long id);
+
+  Etudiant getEtudiantByEmail(String email);
 }

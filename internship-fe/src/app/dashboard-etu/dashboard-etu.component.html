@@ -102,17 +102,19 @@
       <div class="notifications">Pas de notifications.</div>
     </div>
     <div class="profile-sec">
-      <div class="pfp">KI</div>
+      <div class="pfp">
+        {{ etudiant?.nom?.charAt(0) }}{{ etudiant?.prenom?.charAt(0) }}
+      </div>
       <div class="info">
-        <div class="ln">Krichi</div>
-        <div class="fn">Ilyass</div>
+        <div class="ln">{{ etudiant?.nom }}</div>
+        <div class="fn">{{ etudiant?.prenom }}</div>
         <div class="desc">
           Étudiant 2<sup>ème</sup> année Génie Logiciel à l'ENSIAS.
         </div>
       </div>
       <div class="socials">
         <button>
-          <span>+212 627-33-33-33</span>
+          <span>{{ etudiant?.tel }}</span>
           <span style="transform: translateY(10%)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +134,7 @@
           </span>
         </button>
         <button>
-          <span>example.gmail.com</span>
+          <span>{{ etudiant?.email }}</span>
           <span style="transform: translateY(10%)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
