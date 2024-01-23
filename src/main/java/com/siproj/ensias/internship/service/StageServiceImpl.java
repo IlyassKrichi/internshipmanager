@@ -48,4 +48,9 @@ public class StageServiceImpl implements StageService {
     oldstage.setDateFin(newstage.getDateFin());
     return stageRepository.save(oldstage);
   }
+
+  @Override
+  public List<Stage> getStagesByEmail(String email) {
+    return stageRepository.findByEmail(email);
+  }
 }

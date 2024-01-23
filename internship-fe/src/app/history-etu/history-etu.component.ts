@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { AuthService } from '../auth-service.service';
 import { Etudiant } from '../objects/Etudiant';
+import { Stage } from '../objects/Stage';
 
 @Component({
   selector: 'app-history-etu',
@@ -13,6 +14,7 @@ export class HistoryEtuComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}
 
   etudiant: Etudiant | undefined;
+  stages: Stage[] | undefined;
 
   ngOnInit(): void {
     const token = this.authService.getTokens();
@@ -22,10 +24,10 @@ export class HistoryEtuComponent implements OnInit {
 
       const email = decodeToken.sub;
 
-      this.authService.getEtudiantByEmail(email).subscribe({
-        next: (etudiant) => {
-          this.etudiant = etudiant;
-          console.log(this.etudiant);
+      this.authService.getStagesByEmail(email).subscribe({
+        next: (stages) => {
+          this.stages = stages;
+          console.log(this.stages);
         },
         error: (error) => {
           console.log(error);

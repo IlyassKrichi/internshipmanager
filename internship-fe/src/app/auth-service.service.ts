@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Etudiant } from './objects/Etudiant';
+import { Professeur } from './objects/Professeur';
 import { Stage } from './objects/Stage';
 
 @Injectable({
@@ -30,6 +31,22 @@ export class AuthService {
       };
 
       return this.http.get<Etudiant>(this.apiUrl + '/etudiant/' + email, {
+        headers: headers,
+      });
+    } else {
+      throw new Error('No token');
+    }
+  }
+
+  getProfesseurByEmail(email: string): Observable<Professeur> {
+    const token = this.getTokens();
+    if (token) {
+      const headers = {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      };
+
+      return this.http.get<Professeur>(this.apiUrl + '/professeur/' + email, {
         headers: headers,
       });
     } else {

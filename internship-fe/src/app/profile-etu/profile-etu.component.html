@@ -98,17 +98,19 @@
     </div>
     <div class="profile">
       <div class="profile-sec">
-        <div class="pfp">KI</div>
+        <div class="pfp">
+          {{ etudiant?.nom?.charAt(0) }}{{ etudiant?.prenom?.charAt(0) }}
+        </div>
         <div class="info">
-          <div class="ln">Krichi</div>
-          <div class="fn">Ilyass</div>
+          <div class="ln">{{ etudiant?.nom }}</div>
+          <div class="fn">{{ etudiant?.prenom }}</div>
           <div class="desc">
             Étudiant 2<sup>ème</sup> année Génie Logiciel à l'ENSIAS.
           </div>
         </div>
         <div class="socials">
           <button>
-            <span>+212 627-33-33-33</span>
+            <span>{{ etudiant?.tel }}</span>
             <span style="transform: translateY(10%)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +130,7 @@
             </span>
           </button>
           <button>
-            <span>example.gmail.com</span>
+            <span>{{ etudiant?.email }}</span>
             <span style="transform: translateY(10%)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +152,7 @@
             </span>
           </button>
           <button>
-            <span>Ilyass Krichi</span>
+            <span>{{ etudiant?.prenom }} {{ etudiant?.nom }}</span>
             <span style="transform: translateY(10%)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -172,19 +174,23 @@
       <div class="infos">
         <div class="field" [class.inactive]="fieldInactive">
           <span>Nom</span>
-          <input class="txt" type="text" value="Krichi" />
+          <input class="txt" type="text" value="{{ etudiant?.nom }}" />
         </div>
         <div class="field" [class.inactive]="fieldInactive">
           <span>Prénom</span>
-          <input class="txt" type="text" value="Ilyass" />
+          <input class="txt" type="text" value="{{ etudiant?.prenom }}" />
         </div>
         <div class="field" [class.inactive]="fieldInactive">
           <span>Genre</span>
-          <input class="txt" type="text" value="Masculin" />
+          <input class="txt" type="text" value="{{ etudiant?.genre }}" />
         </div>
         <div class="field" [class.inactive]="fieldInactive">
           <span>Date de naissance</span>
-          <input class="txt" type="date" value="1999-01-01" />
+          <input
+            class="txt"
+            type="date"
+            value="{{ etudiant?.dateNaissance }}"
+          />
         </div>
         <div class="field">
           <span>Email</span>
@@ -192,7 +198,7 @@
             class="text"
             [class.active]="textActive"
             type="text"
-            value="V4i9o@example.com"
+            value="{{ etudiant?.email }}"
           />
         </div>
         <div class="field">
@@ -201,12 +207,12 @@
             class="text"
             [class.active]="textActive"
             type="text"
-            value="0651234567"
+            value="{{ etudiant?.tel }}"
           />
         </div>
         <div class="field" [class.inactive]="fieldInactive">
           <span>Adresse</span>
-          <input class="txt" type="text" value="Al Irfane" />
+          <input class="txt" type="text" value="{{ etudiant?.adresse }}" />
         </div>
         <div class="field" [class.inactive]="fieldInactive">
           <span>Niveau d'étude</span>

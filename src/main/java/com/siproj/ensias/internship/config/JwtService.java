@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -36,12 +37,20 @@ public class JwtService {
     Map<String, Object> extraClaims,
     UserDetails userDetails
   ) {
+    String role = userDetails
+      .getAuthorities()
+      .stream()
+      .findFirst()
+      .map(GrantedAuthority::getAuthority)
+      .orElse("defaultRole");
+
     return Jwts
       .builder()
       .setClaims(extraClaims)
+      .claim("role", role)
       .setSubject(userDetails.getUsername())
       .setIssuedAt(new Date(System.currentTimeMillis()))
-      .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+      .setExpiration(new Date(System.currentTimeMillis() + 10000 * 60 * 24))
       .signWith(getSigninKey(), SignatureAlgorithm.HS256)
       .compact();
   }

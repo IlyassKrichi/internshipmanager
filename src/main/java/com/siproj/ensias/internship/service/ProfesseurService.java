@@ -13,4 +13,6 @@ public interface ProfesseurService {
   void deleteProfesseur(Long id);
 
   Professeur updateProfesseur(Long id, Professeur newprofesseur);
+
+  Professeur getProfesseurByEmail(String email);
 }

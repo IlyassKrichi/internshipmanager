@@ -80,17 +80,19 @@
     </div>
     <div class="profile">
       <div class="profile-sec">
-        <div class="pfp">KI</div>
+        <div class="pfp">
+          {{ professeur?.nom?.charAt(0) }}{{ professeur?.prenom?.charAt(0) }}
+        </div>
         <div class="info">
-          <div class="ln">Krichi</div>
-          <div class="fn">Ilyass</div>
+          <div class="ln">{{ professeur?.nom }}</div>
+          <div class="fn">{{ professeur?.prenom }}</div>
           <div class="desc">
             Professeur département Génie Logiciel à l'ENSIAS.
           </div>
         </div>
         <div class="socials">
           <button>
-            <span>+212 627-33-33-33</span>
+            <span>{{ professeur?.tel }}</span>
             <span style="transform: translateY(10%)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +112,7 @@
             </span>
           </button>
           <button>
-            <span>example.gmail.com</span>
+            <span>{{ professeur?.email }}</span>
             <span style="transform: translateY(10%)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +134,7 @@
             </span>
           </button>
           <button>
-            <span>Ilyass Krichi</span>
+            <span>{{ professeur?.prenom }} {{ professeur?.nom }}</span>
             <span style="transform: translateY(10%)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -154,11 +156,11 @@
       <div class="infos">
         <div class="field" [class.inactive]="fieldInactive">
           <span>Nom</span>
-          <input class="txt" type="text" value="Krichi" />
+          <input class="txt" type="text" value="{{ professeur?.nom }}" />
         </div>
         <div class="field" [class.inactive]="fieldInactive">
           <span>Prénom</span>
-          <input class="txt" type="text" value="Ilyass" />
+          <input class="txt" type="text" value="{{ professeur?.prenom }}" />
         </div>
         <div class="field">
           <span>Email</span>
@@ -166,7 +168,7 @@
             class="text"
             [class.active]="textActive"
             type="text"
-            value="V4i9o@example.com"
+            value="{{ professeur?.email }}"
           />
         </div>
         <div class="field">
@@ -175,12 +177,12 @@
             class="text"
             [class.active]="textActive"
             type="text"
-            value="0651234567"
+            value="{{ professeur?.tel }}"
           />
         </div>
         <div class="field" [class.inactive]="fieldInactive">
           <span>Adresse</span>
-          <input class="txt" type="text" value="Al Irfane" />
+          <input class="txt" type="text" value="{{ professeur?.adresse }}" />
         </div>
       </div>
       <button

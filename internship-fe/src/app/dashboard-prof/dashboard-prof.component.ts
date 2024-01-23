@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { AuthService } from '../auth-service.service';
-import { Etudiant } from '../objects/Etudiant';
+import { Professeur } from '../objects/Professeur';
 
 @Component({
   selector: 'app-dashboard-etu',
@@ -12,7 +12,7 @@ import { Etudiant } from '../objects/Etudiant';
 export class DashboardProfComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}
 
-  etudiant: Etudiant | undefined;
+  professeur: Professeur | undefined;
 
   ngOnInit(): void {
     const token = this.authService.getTokens();
@@ -22,9 +22,9 @@ export class DashboardProfComponent implements OnInit {
 
       const email = decodeToken.sub;
 
-      this.authService.getEtudiantByEmail(email).subscribe({
-        next: (etudiant) => {
-          this.etudiant = etudiant;
+      this.authService.getProfesseurByEmail(email).subscribe({
+        next: (professeur) => {
+          this.professeur = professeur;
         },
         error: (error) => {
           console.log(error);

@@ -2,13 +2,9 @@ package com.siproj.ensias.internship.service;
 
 import org.springframework.web.multipart.MultipartFile;
 
-
 public interface FicheDeStageService {
+  final String UPLOAD_DIR =
+    "D:\\Personal files\\Documents\\ENSIAS GL\\Projet SI\\Projet SI GitHub\\internship\\src\\main\\java\\com\\siproj\\ensias\\internship\\pdf";
 
-       final String UPLOAD_DIR = "/path/to/upload/directory"; // Remplacez par le chemin où vous souhaitez stocker les fichiers
-
-
-
-        String saveFile(MultipartFile file);
-
-    }
+  String saveFile(MultipartFile file);
+}

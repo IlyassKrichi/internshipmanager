@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 import { AuthService } from '../auth-service.service';
 
 @Component({
@@ -33,7 +34,16 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (response) => {
           localStorage.setItem('token', response.token);
-          this.router.navigate(['étudiant/dashboard']);
+          const token = this.authService.getTokens();
+          if (token) {
+            const decodeToken: any = jwtDecode(token);
+            const role = decodeToken.role;
+            if (role === 'ETUDIANT' && this.studentsClick) {
+              this.router.navigate(['étudiant/dashboard']);
+            } else if (role === 'PROFESSEUR' && this.professorsClick) {
+              this.router.navigate(['professeur/dashboard']);
+            }
+          }
         },
         error: (error) => {
           console.error('Something went wrong!', error);

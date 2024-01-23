@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PdfServiceService } from '../pdf-service.service';
 
 @Component({
   selector: 'app-status-etu',
@@ -10,7 +11,7 @@ export class StatusEtuComponent {
   uploadActive: boolean = false;
   fileName: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private pdfService: PdfServiceService) {}
 
   uploadActivated(): void {
     let fileInput = document.getElementById('fileInput') as HTMLInputElement;
@@ -26,6 +27,17 @@ export class StatusEtuComponent {
           this.uploadActive = true;
           this.fileName = 'Fichier : ' + fileInput.files[0].name;
         }
+      });
+    }
+  }
+
+  upload(event: Event): void {
+    const file: File | null =
+      (event.target as HTMLInputElement).files?.[0] || null;
+    if (file) {
+      console.log(file);
+      this.pdfService.uploadFile(file)?.subscribe((response) => {
+        console.log(response);
       });
     }
   }

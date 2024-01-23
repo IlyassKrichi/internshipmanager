@@ -1,25 +1,37 @@
 package com.siproj.ensias.internship.controller;
 
-
 import com.siproj.ensias.internship.service.FicheDeStageServiceImpl;
-import org.springframework.http.ResponseEntity;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/api/fiches")
+@CrossOrigin(origins = "http://localhost:4200")
 public class FicheDeStageController {
 
-    FicheDeStageServiceImpl ficheDeStageService;
-    @PostMapping("/submitFS")
-    public ResponseEntity<String> soumettreFiche(@RequestParam("fichePDF") MultipartFile fichePDF) {
-        // Ajoutez la logique pour traiter la fiche de stage: none
-        // par exemple, enregistrer le fichier, déclencher l'évaluation, etc.
-        ficheDeStageService.saveFile(fichePDF);
-        // Retournez une réponse appropriée
-        return ResponseEntity.ok("Fiche de stage soumise avec succès!");
+  private static String UPLOAD_DIR =
+    "D:\\Personal files\\Documents\\ENSIAS GL\\Projet SI\\Projet SI GitHub\\internship\\src\\main\\java\\com\\siproj\\ensias\\internship\\pdf";
+
+  FicheDeStageServiceImpl ficheDeStageService;
+
+  @PostMapping("/api/fiches/submitFS")
+  public void soumettreFiche(@RequestPart("file") MultipartFile file) {
+    if (file.isEmpty()) {
+      return;
     }
+
+    try {
+      byte[] bytes = file.getBytes();
+      Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
+      Files.write(path, bytes);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 }

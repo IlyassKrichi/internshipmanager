@@ -1,17 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
+import { AuthService } from '../auth-service.service';
+import { Professeur } from '../objects/Professeur';
 
 @Component({
   selector: 'app-profile-etu',
   templateUrl: './profile-prof.component.html',
   styleUrls: ['./profile-prof.component.scss'],
 })
-export class ProfileProfComponent {
+export class ProfileProfComponent implements OnInit {
   fieldInactive = false;
   btnActive = false;
   textActive = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
+
+  professeur: Professeur | undefined;
+
+  ngOnInit(): void {
+    const token = this.authService.getTokens();
+
+    if (token) {
+      const decodeToken: any = jwtDecode(token);
+
+      const email = decodeToken.sub;
+
+      this.authService.getProfesseurByEmail(email).subscribe({
+        next: (professeur) => {
+          this.professeur = professeur;
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
+    }
+  }
 
   navigateToDashboard(): void {
     this.router.navigate(['professeur/dashboard']);

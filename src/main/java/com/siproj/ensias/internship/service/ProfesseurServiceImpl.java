@@ -53,4 +53,9 @@ public class ProfesseurServiceImpl implements ProfesseurService {
     oldprofesseur.setEmail(newprofesseur.getEmail());
     return professeurRepository.save(oldprofesseur);
   }
+
+  @Override
+  public Professeur getProfesseurByEmail(String email) {
+    return professeurRepository.findByEmail(email);
+  }
 }

@@ -85,18 +85,18 @@
     </div>
     <div class="profile-sec">
       <div class="pfp">
-        {{ etudiant?.nom?.charAt(0) }}{{ etudiant?.prenom?.charAt(0) }}
+        {{ professeur?.nom?.charAt(0) }}{{ professeur?.prenom?.charAt(0) }}
       </div>
       <div class="info">
-        <div class="ln">{{ etudiant?.nom }}</div>
-        <div class="fn">{{ etudiant?.prenom }}</div>
+        <div class="ln">{{ professeur?.nom }}</div>
+        <div class="fn">{{ professeur?.prenom }}</div>
         <div class="desc">
           Professeur département Génie Logiciel à l'ENSIAS.
         </div>
       </div>
       <div class="socials">
         <button>
-          <span>{{ etudiant?.tel }}</span>
+          <span>{{ professeur?.tel }}</span>
           <span style="transform: translateY(10%)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@
           </span>
         </button>
         <button>
-          <span>{{ etudiant?.email }}</span>
+          <span>{{ professeur?.email }}</span>
           <span style="transform: translateY(10%)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@
           </span>
         </button>
         <button>
-          <span>Ilyass Krichi</span>
+          <span>{{ professeur?.nom }} {{ professeur?.prenom }}</span>
           <span style="transform: translateY(10%)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
