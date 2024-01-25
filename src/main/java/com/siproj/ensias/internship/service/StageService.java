@@ -4,15 +4,15 @@ import com.siproj.ensias.internship.model.Stage;
 import java.util.List;
 
 public interface StageService {
+  List<Stage> getAll();
 
-    List<Stage> getAll();
+  Stage addStage(Stage stage);
 
-    Stage addStage(Stage stage);
+  Stage getStage(Long id);
 
-    Stage getStage(Long id);
+  void deleteStage(Long id);
 
-    void deleteStage(Long id);
+  Stage updateStage(Long id, Stage newstage);
 
-    Stage updateStage(Long id, Stage newstage);
-
+  List<Stage> getStagesByEmail(String email);
 }

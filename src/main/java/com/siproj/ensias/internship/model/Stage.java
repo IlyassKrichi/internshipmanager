@@ -1,11 +1,16 @@
 package com.siproj.ensias.internship.model;
 
-import java.time.LocalDate;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import java.time.LocalDate;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +21,35 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Stage {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    private LocalDate dateDebut;
+  @JsonManagedReference
+  @ManyToOne(optional = true)
+  @JoinColumn(name = "entreprise_id", referencedColumnName = "id")
+  private Entreprise entreprise;
 
-    private LocalDate dateFin;
+  @JsonManagedReference
+  @ManyToOne(optional = true)
+  @JoinColumn(name = "typeStage_id", referencedColumnName = "id")
+  private TypeStage typeStage;
 
+  @JsonManagedReference
+  @ManyToOne(optional = true)
+  @JoinColumn(name = "tuteur_id", referencedColumnName = "id")
+  private Tuteur tuteur;
+
+  @JsonManagedReference
+  @ManyToMany
+  @JoinTable(
+    name = "effectue",
+    joinColumns = @JoinColumn(name = "stage_id"),
+    inverseJoinColumns = @JoinColumn(name = "etudiant_id")
+  )
+  private List<Etudiant> etudiants;
+
+  private LocalDate dateDebut;
+
+  private LocalDate dateFin;
 }

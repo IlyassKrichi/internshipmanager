@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<div class="main">
+  <div class="container">
+    <div class="sidebar">
+      <div class="logo">Gestion des Stages</div>
+      <div class="sections">
+        <button (click)="navigateToDashboard()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M2.25 12L11.2045 3.04549C11.6438 2.60615 12.3562 2.60615 12.7955 3.04549L21.75 12M4.5 9.75V19.875C4.5 20.4963 5.00368 21 5.625 21H9.75V16.125C9.75 15.5037 10.2537 15 10.875 15H13.125C13.7463 15 14.25 15.5037 14.25 16.125V21H18.375C18.9963 21 19.5 20.4963 19.5 19.875V9.75M8.25 21H16.5"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Dashboard
+        </button>
+        <button (click)="navigateToProfile()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M17.9815 18.7248C16.6121 16.9175 14.4424 15.75 12 15.75C9.55761 15.75 7.38789 16.9175 6.01846 18.7248M17.9815 18.7248C19.8335 17.0763 21 14.6744 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 14.6744 4.1665 17.0763 6.01846 18.7248M17.9815 18.7248C16.3915 20.1401 14.2962 21 12 21C9.70383 21 7.60851 20.1401 6.01846 18.7248M15 9.75C15 11.4069 13.6569 12.75 12 12.75C10.3431 12.75 9 11.4069 9 9.75C9 8.09315 10.3431 6.75 12 6.75C13.6569 6.75 15 8.09315 15 9.75Z"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Profil
+        </button>
+        <button (click)="navigateToHistory()" style="background-color: #d2d2d2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.50183 6H11.2477L11.25 6H14.6299C16.4915 6.00268 17.9999 7.51269 17.9999 9.375V18.75C19.6567 18.75 20.9999 17.4068 20.9999 15.75V6.10821C20.9999 4.60282 19.8751 3.2966 18.3358 3.16884C18.1121 3.15027 17.8879 3.13321 17.6632 3.11767C17.1633 2.15647 16.1583 1.5 15 1.5H13.5C12.3417 1.5 11.3367 2.15647 10.8368 3.11765C10.6121 3.13319 10.3878 3.15026 10.1639 3.16884C8.66165 3.29353 7.55421 4.54069 7.50183 6ZM13.5 3C12.6716 3 12 3.67157 12 4.5H16.5C16.5 3.67157 15.8284 3 15 3H13.5Z"
+              fill="black"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3 9.375C3 8.33947 3.83947 7.5 4.875 7.5H14.625C15.6605 7.5 16.5 8.33947 16.5 9.375V20.625C16.5 21.6605 15.6605 22.5 14.625 22.5H4.875C3.83947 22.5 3 21.6605 3 20.625V9.375ZM12.5857 13.9685C12.8444 13.6451 12.792 13.1731 12.4685 12.9143C12.1451 12.6556 11.6731 12.708 11.4143 13.0315L8.93781 16.1272L8.03033 15.2197C7.73744 14.9268 7.26256 14.9268 6.96967 15.2197C6.67678 15.5126 6.67678 15.9874 6.96967 16.2803L8.46967 17.7803C8.62052 17.9312 8.82847 18.0107 9.04148 17.9989C9.25448 17.9871 9.45238 17.8851 9.58565 17.7185L12.5857 13.9685Z"
+              fill="black"
+            /></svg
+          >Historique
+        </button>
+        <button (click)="navigateToCalendar()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M6.75 3V5.25M17.25 3V5.25M3 18.75V7.5C3 6.25736 4.00736 5.25 5.25 5.25H18.75C19.9926 5.25 21 6.25736 21 7.5V18.75M3 18.75C3 19.9926 4.00736 21 5.25 21H18.75C19.9926 21 21 19.9926 21 18.75M3 18.75V11.25C3 10.0074 4.00736 9 5.25 9H18.75C19.9926 9 21 10.0074 21 11.25V18.75"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Calendrier
+        </button>
+        <button (click)="navigateToStatus()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M8.625 12C8.625 12.2071 8.45711 12.375 8.25 12.375C8.04289 12.375 7.875 12.2071 7.875 12C7.875 11.7929 8.04289 11.625 8.25 11.625C8.45711 11.625 8.625 11.7929 8.625 12ZM8.625 12H8.25M12.375 12C12.375 12.2071 12.2071 12.375 12 12.375C11.7929 12.375 11.625 12.2071 11.625 12C11.625 11.7929 11.7929 11.625 12 11.625C12.2071 11.625 12.375 11.7929 12.375 12ZM12.375 12H12M16.125 12C16.125 12.2071 15.9571 12.375 15.75 12.375C15.5429 12.375 15.375 12.2071 15.375 12C15.375 11.7929 15.5429 11.625 15.75 11.625C15.9571 11.625 16.125 11.7929 16.125 12ZM16.125 12H15.75M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Statut
+        </button>
+      </div>
+      <div class="notifications">Pas de notifications.</div>
+    </div>
+    <div class="history">
+      <div class="title">Historique des Stages</div>
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Entreprise</th>
+              <th>Tuteur</th>
+              <th>Professeur Encadrant</th>
+              <th>Compétences</th>
+              <th>Durée</th>
+              <th>Hybride</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google</td>
+              <td>John Doe</td>
+              <td>Smith</td>
+              <td>Développement Web</td>
+              <td>3 mois</td>
+              <td>Hybride</td>
+            </tr>
+            <tr>
+              <td>Microsoft</td>
+              <td>Jane Smith</td>
+              <td>Johnson</td>
+              <td>Analyse de données</td>
+              <td>2 mois</td>
+              <td>À distance</td>
+            </tr>
+            <tr>
+              <td>Apple</td>
+              <td>Michael Brown</td>
+              <td>Wilson</td>
+              <td>Développement d'applications mobiles</td>
+              <td>2 mois</td>
+              <td>Hybride</td>
+            </tr>
+            <tr>
+              <td>Amazon</td>
+              <td>Sarah Davis</td>
+              <td>Thompson</td>
+              <td>Cloud Computing</td>
+              <td>1 mois</td>
+              <td>Présentiel</td>
+            </tr>
+            <tr>
+              <td>Huawei</td>
+              <td>Nilson Tom</td>
+              <td>Bob</td>
+              <td>IoT</td>
+              <td>2 mois</td>
+              <td>Présentiel</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer">Stages à venir: 4</div>
+    </div>
+  </div>
+</div>

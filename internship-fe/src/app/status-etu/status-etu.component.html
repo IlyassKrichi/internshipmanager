@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<div class="main">
+  <div class="container">
+    <div class="sidebar">
+      <div class="logo">Gestion des Stages</div>
+      <div class="sections">
+        <button (click)="navigateToDashboard()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M2.25 12L11.2045 3.04549C11.6438 2.60615 12.3562 2.60615 12.7955 3.04549L21.75 12M4.5 9.75V19.875C4.5 20.4963 5.00368 21 5.625 21H9.75V16.125C9.75 15.5037 10.2537 15 10.875 15H13.125C13.7463 15 14.25 15.5037 14.25 16.125V21H18.375C18.9963 21 19.5 20.4963 19.5 19.875V9.75M8.25 21H16.5"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Dashboard
+        </button>
+        <button (click)="navigateToProfile()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M17.9815 18.7248C16.6121 16.9175 14.4424 15.75 12 15.75C9.55761 15.75 7.38789 16.9175 6.01846 18.7248M17.9815 18.7248C19.8335 17.0763 21 14.6744 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 14.6744 4.1665 17.0763 6.01846 18.7248M17.9815 18.7248C16.3915 20.1401 14.2962 21 12 21C9.70383 21 7.60851 20.1401 6.01846 18.7248M15 9.75C15 11.4069 13.6569 12.75 12 12.75C10.3431 12.75 9 11.4069 9 9.75C9 8.09315 10.3431 6.75 12 6.75C13.6569 6.75 15 8.09315 15 9.75Z"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Profil
+        </button>
+        <button (click)="navigateToHistory()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M11.3495 3.83619C11.2848 4.04602 11.25 4.26894 11.25 4.5C11.25 4.91421 11.5858 5.25 12 5.25H16.5C16.9142 5.25 17.25 4.91421 17.25 4.5C17.25 4.26894 17.2152 4.04602 17.1505 3.83619M11.3495 3.83619C11.6328 2.91757 12.4884 2.25 13.5 2.25H15C16.0116 2.25 16.8672 2.91757 17.1505 3.83619M11.3495 3.83619C10.9739 3.85858 10.5994 3.88529 10.2261 3.91627C9.09499 4.01015 8.25 4.97324 8.25 6.10822V8.25M17.1505 3.83619C17.5261 3.85858 17.9006 3.88529 18.2739 3.91627C19.405 4.01015 20.25 4.97324 20.25 6.10822V16.5C20.25 17.7426 19.2426 18.75 18 18.75H15.75M8.25 8.25H4.875C4.25368 8.25 3.75 8.75368 3.75 9.375V20.625C3.75 21.2463 4.25368 21.75 4.875 21.75H14.625C15.2463 21.75 15.75 21.2463 15.75 20.625V18.75M8.25 8.25H14.625C15.2463 8.25 15.75 8.75368 15.75 9.375V18.75M7.5 15.75L9 17.25L12 13.5"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Historique
+        </button>
+        <button (click)="navigateToCalendar()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              d="M6.75 3V5.25M17.25 3V5.25M3 18.75V7.5C3 6.25736 4.00736 5.25 5.25 5.25H18.75C19.9926 5.25 21 6.25736 21 7.5V18.75M3 18.75C3 19.9926 4.00736 21 5.25 21H18.75C19.9926 21 21 19.9926 21 18.75M3 18.75V11.25C3 10.0074 4.00736 9 5.25 9H18.75C19.9926 9 21 10.0074 21 11.25V18.75"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+          >Calendrier
+        </button>
+        <button (click)="navigateToStatus()" style="background-color: #d2d2d2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 1 24 24"
+            fill="none"
+            style="margin-right: 30px; margin-left: 20px"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2.25C6.61522 2.25 2.25 6.61522 2.25 12C2.25 17.3848 6.61522 21.75 12 21.75C17.3848 21.75 21.75 17.3848 21.75 12C21.75 6.61522 17.3848 2.25 12 2.25ZM12 10.875C11.3787 10.875 10.875 11.3787 10.875 12C10.875 12.6213 11.3787 13.125 12 13.125C12.6213 13.125 13.125 12.6213 13.125 12C13.125 11.3787 12.6213 10.875 12 10.875ZM15.375 12C15.375 11.3787 15.8787 10.875 16.5 10.875C17.1213 10.875 17.625 11.3787 17.625 12C17.625 12.6213 17.1213 13.125 16.5 13.125C15.8787 13.125 15.375 12.6213 15.375 12ZM7.5 10.875C6.87868 10.875 6.375 11.3787 6.375 12C6.375 12.6213 6.87868 13.125 7.5 13.125C8.12132 13.125 8.625 12.6213 8.625 12C8.625 11.3787 8.12132 10.875 7.5 10.875Z"
+              fill="black"
+            /></svg
+          >Statut
+        </button>
+      </div>
+      <div class="notifications">Pas de notifications.</div>
+    </div>
+    <div class="status">
+      <div class="status-title">Statut de Stage</div>
+      <div class="stages-forms">
+        <div class="prestage">
+          <div class="text">
+            <span style="font-size: 22px; font-weight: 500"
+              >Télécharger le fiche de stage:</span
+            >
+            <ul style="font-size: 18px; font-weight: 400">
+              <li>Le fiche de stage doit être remplis.</li>
+              <li>Le fiche de stage doit être au format PDF.</li>
+              <li>Réviser les informations avant de soumettre.</li>
+              <li>
+                Le fiche de stage doit être signé et caché par l'entreprise.
+              </li>
+            </ul>
+          </div>
+          <button
+            class="upload"
+            [class.scaled]="uploadActive"
+            (click)="uploadActivated()"
+          >
+            <span class="upload-text" [class.visible]="uploadActive">{{
+              fileName
+            }}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="84"
+              height="84"
+              viewBox="0 0 24 24"
+              fill="none"
+              class="upload-icon"
+              [class.hidden]="uploadActive"
+            >
+              <path
+                d="M11.4697 1.71967C11.7626 1.42678 12.2374 1.42678 12.5303 1.71967L15.5303 4.71967C15.8232 5.01256 15.8232 5.48744 15.5303 5.78033C15.2374 6.07322 14.7626 6.07322 14.4697 5.78033L12.75 4.06066L12.75 7.5H11.25V4.06066L9.53033 5.78033C9.23744 6.07322 8.76256 6.07322 8.46967 5.78033C8.17678 5.48744 8.17678 5.01256 8.46967 4.71967L11.4697 1.71967Z"
+                fill="black"
+              />
+              <path
+                d="M11.25 7.5L11.25 15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15V7.5H16.5C18.1569 7.5 19.5 8.84315 19.5 10.5V19.5C19.5 21.1569 18.1569 22.5 16.5 22.5H7.5C5.84315 22.5 4.5 21.1569 4.5 19.5V10.5C4.5 8.84315 5.84315 7.5 7.5 7.5H11.25Z"
+                fill="black"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="84"
+              height="84"
+              viewBox="0 0 24 24"
+              fill="none"
+              class="delete-icon"
+              [class.appear]="uploadActive"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L12 10.9393L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L13.0607 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0607L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L10.9393 12L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+          <input
+            type="file"
+            accept=".pdf"
+            id="fileInput"
+            style="display: none"
+            (change)="upload($event)"
+          />
+        </div>
+        <div class="header">
+          <div style="font-style: italic">Pré-Stage</div>
+          <div style="font-style: italic">Stage</div>
+          <div style="font-style: italic">Post-Stage</div>
+        </div>
+        <div class="progress-bar">
+          <div class="line"></div>
+          <div class="line a1"></div>
+          <div class="line a2"></div>
+          <div class="line a3"></div>
+          <div class="circle1"></div>
+          <div class="circle1 a"></div>
+          <div class="circle2"></div>
+          <div class="circle2 a"></div>
+          <div class="circle3"></div>
+          <div class="circle3 a"></div>
+        </div>
+
+        <div class="stage-info">
+          <div>
+            <span style="font-size: 22px; font-weight: 500">Pré-Stage :</span>
+            <ul style="font-size: 18px; font-weight: 400">
+              <li>Téléchargement de fiche de stage.</li>
+              <li style="color: red">
+                N.B : Sans validation de fiche de stage par le professeur,
+                <br />
+                vous ne pouvez pas passer à l'étape suivante.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <span style="font-size: 22px; font-weight: 500">Post-Stage :</span>
+            <ul style="font-size: 18px; font-weight: 400">
+              <li>Télechargement de rapport de stage.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="deadline">
+          <span style="font-style: italic">Deadline : 15 Janvier 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

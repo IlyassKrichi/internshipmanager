@@ -1,0 +1,390 @@
+.main {
+  font-family: var(--font-default);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #a8dff5 0%, #1446d0 100%);
+}
+
+.container {
+  width: 85vw;
+  height: 85vh;
+  position: relative;
+}
+
+.login-block {
+  width: 85vw;
+  height: 85vh;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.choice {
+  width: 16vw;
+  height: 8vh;
+  left: 64.5vw;
+  top: 14vh;
+  position: absolute;
+  color: black;
+  font-size: 65px;
+  font-weight: 600;
+  word-wrap: break-word;
+  text-align: center;
+  line-height: 8vh;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s, visibility 0.5s;
+}
+
+.choice.faded {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
+}
+
+.images {
+  width: 60vw;
+  height: 85vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+  transition: width 0.25s;
+}
+
+.images.clicked {
+  width: 35vw;
+}
+
+.students {
+  width: 30vw;
+  height: 85vh;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1;
+  visibility: visible;
+  filter: brightness(50%);
+  transition: transform 0.5s, filter 0.5s, width 0.5s, z-index 0s linear 0.5s,
+    left 0.25s, visibility 1s;
+}
+
+.students.hovered {
+  width: 38.5vw;
+  transform: scale(1.3);
+  z-index: 1;
+  filter: brightness(100%);
+  transition-delay: 0s;
+}
+
+.students.clicked {
+  width: 35vw;
+  z-index: 1;
+  transform: scale(1);
+  filter: brightness(100%);
+  transition-delay: 0s;
+}
+
+.students.faded {
+  left: -30vw;
+  z-index: 0;
+  visibility: hidden;
+  transition-delay: 0s;
+}
+
+.professors {
+  width: 30vw;
+  height: 85vh;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  object-fit: cover;
+  object-position: 70% 0%;
+  z-index: 0;
+  opacity: 1;
+  visibility: visible;
+  filter: brightness(50%);
+  transition: transform 0.5s, filter 0.5s, width 0.5s, right 0.5s, visibility 1s;
+}
+
+.professors.hovered {
+  width: 38.5vw;
+  transform: scale(1.3);
+  z-index: 1;
+  filter: brightness(100%);
+}
+
+.professors.clicked {
+  width: 35vw;
+  z-index: 1;
+  transform: scale(1);
+  filter: brightness(100%);
+  transition-delay: 0s;
+}
+
+.professors.faded {
+  right: 60vw;
+  z-index: 0;
+  visibility: hidden;
+  transition-delay: 0s;
+}
+
+@keyframes btn1 {
+  to {
+    visibility: visible;
+  }
+}
+
+.btn1 {
+  width: 25vw;
+  height: 17.5vh;
+  left: 60vw;
+  top: 50vh;
+  position: absolute;
+  color: black;
+  font-size: 40px;
+  font-weight: 500;
+  word-wrap: break-word;
+  border-top: 1px solid #d2d2d2;
+  text-align: center;
+  line-height: 17.5vh;
+  opacity: 1;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  animation: btn1 3s forwards;
+}
+
+.btn1:hover {
+  cursor: pointer;
+  background: #d2d2d2;
+}
+
+.btn1:active {
+  background: #959595;
+  border-top: 1px solid #959595;
+}
+
+.btn1.faded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes btn2 {
+  to {
+    visibility: visible;
+  }
+}
+
+.btn2 {
+  width: 25vw;
+  height: 17.5vh;
+  left: 60vw;
+  top: 67.5vh;
+  position: absolute;
+  color: black;
+  font-size: 40px;
+  font-weight: 500;
+  word-wrap: break-word;
+  border-top: 1px solid #d2d2d2;
+  text-align: center;
+  line-height: 17.5vh;
+  opacity: 1;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  animation: btn2 3s forwards;
+}
+
+.btn2:hover {
+  cursor: pointer;
+  background: #d2d2d2;
+}
+
+.btn2:active {
+  background: #959595;
+  border-top: 1px solid #959595;
+}
+
+.btn2.faded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.login-form {
+  width: 18vw;
+  height: 25vh;
+  left: 55.75vw;
+  bottom: 15vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: var(--font-default);
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s, visibility 0.5s, left 0.5s;
+}
+
+.login-form.shown {
+  opacity: 1;
+  visibility: visible;
+  left: 51.75vw;
+  transition-delay: 0s;
+}
+
+.login-form form {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  color: black;
+  gap: 1vh;
+}
+
+.sp1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.in1 {
+  width: 18vw;
+  height: 3vh;
+  border: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #d2d2d2;
+  font-family: var(--font-default);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.in1:focus {
+  outline: none;
+}
+
+.sp2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.in2 {
+  width: 18vw;
+  height: 3vh;
+  border: 0px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #d2d2d2;
+  font-family: var(--font-default);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.in2:focus {
+  outline: none;
+}
+
+.login-btn {
+  width: 18vw;
+  height: 5vh;
+  margin-top: 1.5vh;
+  margin-left: 3%;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  border: 0px;
+  background: #3b6fda;
+  color: white;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background: #2355d4;
+}
+
+.login-btn:active {
+  background: #1446d0;
+  border: 0px;
+}
+
+.back-btn {
+  width: 3vw;
+  height: 7vh;
+  left: 50.25vw;
+  bottom: 25vh;
+  position: absolute;
+  font-family: var(--font-default);
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 0px;
+  background: #3b6fda;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s, visibility 0.5s, left 0.5s;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  background: #2355d4;
+}
+
+.back-btn:active {
+  background: #1446d0;
+}
+
+.back-btn.shown {
+  opacity: 1;
+  visibility: visible;
+  left: 46.25vw;
+  transition-delay: 0s;
+}
+
+.msg-etu,
+.msg-prof {
+  width: 46vw;
+  height: 25vh;
+  left: 41vw;
+  top: 5vh;
+  position: absolute;
+  color: black;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 5vh;
+  word-wrap: break-word;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s, visibility 0.5s, left 0.5s;
+}
+
+.msg-etu.shown,
+.msg-prof.shown {
+  opacity: 1;
+  visibility: visible;
+  left: 37vw;
+  transition-delay: 0s;
+}
